@@ -1,8 +1,8 @@
 {
     "name"      : "LEVEL TWO",
-    "text"      : "You have 5 seconds to eliminate the viruses",
+    "text"      : "You have 10 seconds to eliminate the viruses",
     "difficulty" : 1,
     "viruses" : [1],
     "virusCount" : 5,
-    "timeLimit" : 5000
+    "timeLimit" : 10000
 }

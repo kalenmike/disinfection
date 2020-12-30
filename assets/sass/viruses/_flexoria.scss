@@ -1,0 +1,16 @@
+.flexoria {
+    animation: flexoria 6s linear infinite;
+}
+
+@keyframes flexoria {
+    from {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

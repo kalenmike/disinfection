@@ -1,0 +1,8 @@
+{
+    "name"      : "cosmotion",
+    "strength"  : 3,
+    "size"      : 3,
+    "speed"     : 3,
+    "imagePath" : "/assets/img/viruses/virus-4.svg",
+    "class"     : "cosmotion"
+}

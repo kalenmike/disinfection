@@ -18,19 +18,32 @@ class GameShell {
         this.play();
     }
 
-    levelCallback(response){
-        if (response.win == true){
+    levelCallback(response) {
+        if (response.win == true) {
             this.levelNum++;
             this.play();
-        }else{
-            alert("You Lose")
+        } else {
+            this.showGameOverMenu();
         }
     }
 
-    play(){
+    play() {
         this.loadLevelData() // Load the json in an object
-        .then((levelData) => (this.levelData = levelData))
-        .then(() => this.showGameMenu()); 
+            .then((levelData) => {
+                if (levelData){
+                    this.levelData = levelData;
+                }else{
+                    throw Error("Not Found");
+                }
+            })
+            .then(() => this.showGameMenu())
+            .catch(error => {
+                if(error.message == "Not Found"){
+                    this.showGameCompleteMenu();
+                }else{
+                    console.log(error);
+                }
+            });
     }
 
     showGameMenu() {
@@ -39,65 +52,116 @@ class GameShell {
         this.menu.setAttribute("id", "menu");
 
         // Logo
-        let logo = document.createElement('div');
+        let logo = document.createElement("div");
         logo.classList.add("logo");
         this.menu.appendChild(logo);
 
-        let levelName = document.createElement('div');
+        let levelName = document.createElement("div");
         levelName.setAttribute("id", "header");
         levelName.innerText = this.levelData.name;
         this.menu.appendChild(levelName);
 
-        let levelInstructions = document.createElement('div');
+        let levelInstructions = document.createElement("div");
         levelInstructions.setAttribute("id", "description");
         levelInstructions.innerText = this.levelData.text;
         this.menu.appendChild(levelInstructions);
 
         // Level Data
         let levelDifficulty = document.createElement("div");
-        levelDifficulty.innerText = 'Difficulty : ' + this.levelData.difficulty;
+        levelDifficulty.innerText = "Difficulty : " + this.levelData.difficulty;
         this.menu.appendChild(levelDifficulty);
 
         // Start Button
         let startBtn = document.createElement("button");
-        startBtn.classList.add('button');
+        startBtn.classList.add("button");
         startBtn.innerText = "Play Disinfection";
-        startBtn.addEventListener('click', ()=>{
+        startBtn.addEventListener("click", () => {
             this.removeGameMenu();
-            this.level = new Level(this.levelData, this.levelCallback.bind(this));
-        })
+            this.level = new Level(
+                this.levelData,
+                this.levelCallback.bind(this)
+            );
+        });
         this.menu.appendChild(startBtn);
 
         this.gameMount.appendChild(this.menu);
-
     }
 
-    createMenu(){
+    showGameCompleteMenu() {
+        // Clear all elements
+        this.gameMount.innerHTML = "";
 
-        var menu = document.createElement('div');
-        menu.setAttribute("id", "menu");
-        var logo = document.createElement('div');
+        // Set parent
+        this.menu = document.createElement("div");
+        this.menu.setAttribute("id", "menu");
+
+        // Logo
+        let logo = document.createElement("div");
         logo.classList.add("logo");
-        var header = document.createElement('div');
-        header.setAttribute("id", "header");
-        var description = document.createElement('div');
-        description.setAttribute("id", "description");
-        var actions = document.createElement('div');
-        actions.classList.add("actions");
-        var button = document.createElement('div');
-        button.setAttribute("id", "button");
-        button.classList.add("button");
+        this.menu.appendChild(logo);
 
-        menu.appendChild(logo);
-        menu.appendChild(header);
-        menu.appendChild(description);
-        menu.appendChild(actions);
-        menu.appendChild(button);
+        let levelName = document.createElement("div");
+        levelName.setAttribute("id", "header");
+        levelName.innerText = "GAME COMPLETE";
+        this.menu.appendChild(levelName);
 
-        document.getElementById("game").appendChild(menu);
+        let levelInstructions = document.createElement("div");
+        levelInstructions.setAttribute("id", "description");
+        levelInstructions.innerText = "Wow! You are an expert, you finished the game in no time!";
+        this.menu.appendChild(levelInstructions);
+
+        // Start Button
+        let startBtn = document.createElement("button");
+        startBtn.classList.add("button");
+        startBtn.innerText = "Play Again";
+        startBtn.addEventListener("click", () => {
+            this.removeGameMenu();
+            this.levelNum = 1; // Reset Game
+            this.play();
+        });
+        this.menu.appendChild(startBtn);
+
+        this.gameMount.appendChild(this.menu);
     }
 
-    removeGameMenu(){
+    showGameOverMenu() {
+        // Clear all elements
+        this.gameMount.innerHTML = "";
+
+        // Set parent
+        this.menu = document.createElement("div");
+        this.menu.setAttribute("id", "menu");
+
+        // Logo
+        let logo = document.createElement("div");
+        logo.classList.add("logo");
+        this.menu.appendChild(logo);
+
+        let levelName = document.createElement("div");
+        levelName.setAttribute("id", "header");
+        levelName.innerText = "GAME OVER";
+        this.menu.appendChild(levelName);
+
+        let levelInstructions = document.createElement("div");
+        levelInstructions.setAttribute("id", "description");
+        levelInstructions.innerText = "Try harder next time";
+        this.menu.appendChild(levelInstructions);
+
+        // Start Button
+        let startBtn = document.createElement("button");
+        startBtn.classList.add("button");
+        startBtn.innerText = "Start Over";
+        startBtn.addEventListener("click", () => {
+            this.removeGameMenu();
+            this.levelNum = 1; // Reset Game
+            this.play();
+        });
+        this.menu.appendChild(startBtn);
+
+        this.gameMount.appendChild(this.menu);
+    }
+
+    removeGameMenu() {
         this.menu.parentNode.removeChild(this.menu);
     }
 
@@ -105,7 +169,11 @@ class GameShell {
         const response = await fetch(
             "/assets/js/levels/level-" + this.levelNum + ".json"
         );
-        const levelData = response.json();
-        return levelData;
+        if (response.status != 404){
+            const levelData = response.json();
+            return levelData;
+        }else{
+            return false;
+        }
     }
 }

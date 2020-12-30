@@ -1,0 +1,8 @@
+{
+    "name"      : "LEVEL THREE",
+    "text"      : "A new virus has entered the scene. Destroy all traces before your time runs out.",
+    "difficulty" : 1,
+    "viruses" : [1, 2],
+    "virusCount" : 10,
+    "timeLimit" : 20000
+}

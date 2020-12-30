@@ -2,5 +2,7 @@
     "name"      : "flexoria",
     "strength"  : 3,
     "size"      : 3,
-    "speed"     : 3
+    "speed"     : 3,
+    "imagePath" : "/assets/img/viruses/virus-3.svg",
+    "class"     : "flexoria"
 }

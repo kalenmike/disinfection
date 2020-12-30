@@ -38,11 +38,16 @@ class Level {
         }, this.template.timeLimit);
     }
 
-    spawnViruses() {
-        while (this.spawned < this.template.virusCount) {
+    /**
+     * Spawn virus at interval until the level limit has been reached
+     */
+    spawnViruses(){
+        if (this.spawned < this.template.virusCount){
             let random = Math.floor(
-                Math.random() * (this.virusTypes.length - 1 + 0) + 0
+                Math.random() * this.virusTypes.length
             ); // Random number between 0 & length
+            console.log("Random number", random);
+            console.log('VIrus types length', this.virusTypes.length);
             let virus = new Virus(
                 this.virusTypes[random],
                 this.virusDeath.bind(this)
@@ -50,6 +55,7 @@ class Level {
             this.spawned++;
             this.living++;
             this.viruses.push(virus);
+            setTimeout(this.spawnViruses.bind(this), 1000);
         }
     }
 

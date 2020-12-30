@@ -1,0 +1,23 @@
+.septore {
+    animation: septore 4s linear infinite;
+}
+
+@keyframes septore {
+    0% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.2) rotate(360deg);
+        -ms-transform: scale(1.2) rotate(360deg);
+        transform: scale(1.2) rotate(360deg);
+        opacity: 0.5;
+    }
+    100% {
+        -webkit-transform: scale(1) rotate(0deg);
+        -ms-transform: scale(1) rotate(0deg);
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}

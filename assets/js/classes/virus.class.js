@@ -142,7 +142,7 @@
             virus.style.top = launchPosition[1] + "%";
         }
 
-        document.body.appendChild(virus);
+        document.getElementById('disinfection').appendChild(virus); // [DEV] Quick fix
         virus.addEventListener('click', this.die.bind(this));
 
         // Hide Ghost image
