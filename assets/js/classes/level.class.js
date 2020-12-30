@@ -46,8 +46,6 @@ class Level {
             let random = Math.floor(
                 Math.random() * this.virusTypes.length
             ); // Random number between 0 & length
-            console.log("Random number", random);
-            console.log('VIrus types length', this.virusTypes.length);
             let virus = new Virus(
                 this.virusTypes[random],
                 this.virusDeath.bind(this)

@@ -1,8 +1,8 @@
 {
     "name"      : "agualess",
     "strength"  : 1,
-    "size"      : 1,
-    "speed"     : 1,
+    "size"      : {"min":50, "max":120},
+    "speed"     : {"min":10, "max":15},
     "imagePath" : "/assets/img/viruses/virus-1.svg",
     "class"     : "agualess"
 }

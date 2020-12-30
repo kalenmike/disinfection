@@ -10,6 +10,7 @@ class GameShell {
     levelData; // Holds the level data as js object
     level; // Holds the level object created via the Level class
     menu;
+    virusBox;
 
     constructor(elemID) {
         this.gameMount = document.getElementById(elemID);
@@ -28,25 +29,34 @@ class GameShell {
     }
 
     play() {
+        // Reset all viruses
+        if (this.virusBox) {
+            this.gameMount.removeChild(this.virusBox);
+        }
         this.loadLevelData() // Load the json in an object
             .then((levelData) => {
-                if (levelData){
+                if (levelData) {
                     this.levelData = levelData;
-                }else{
+                } else {
                     throw Error("Not Found");
                 }
             })
             .then(() => this.showGameMenu())
-            .catch(error => {
-                if(error.message == "Not Found"){
+            .catch((error) => {
+                if (error.message == "Not Found") {
                     this.showGameCompleteMenu();
-                }else{
+                } else {
                     console.log(error);
                 }
             });
     }
 
     showGameMenu() {
+        // Add virus box
+        this.virusBox = document.createElement("div");
+        this.virusBox.setAttribute("id", "virus-box");
+        this.gameMount.appendChild(this.virusBox);
+
         // Set parent
         this.menu = document.createElement("div");
         this.menu.setAttribute("id", "menu");
@@ -88,9 +98,6 @@ class GameShell {
     }
 
     showGameCompleteMenu() {
-        // Clear all elements
-        this.gameMount.innerHTML = "";
-
         // Set parent
         this.menu = document.createElement("div");
         this.menu.setAttribute("id", "menu");
@@ -107,7 +114,8 @@ class GameShell {
 
         let levelInstructions = document.createElement("div");
         levelInstructions.setAttribute("id", "description");
-        levelInstructions.innerText = "Wow! You are an expert, you finished the game in no time!";
+        levelInstructions.innerText =
+            "Wow! You are an expert, you finished the game in no time!";
         this.menu.appendChild(levelInstructions);
 
         // Start Button
@@ -125,9 +133,6 @@ class GameShell {
     }
 
     showGameOverMenu() {
-        // Clear all elements
-        this.gameMount.innerHTML = "";
-
         // Set parent
         this.menu = document.createElement("div");
         this.menu.setAttribute("id", "menu");
@@ -169,10 +174,10 @@ class GameShell {
         const response = await fetch(
             "/assets/js/levels/level-" + this.levelNum + ".json"
         );
-        if (response.status != 404){
+        if (response.status != 404) {
             const levelData = response.json();
             return levelData;
-        }else{
+        } else {
             return false;
         }
     }
