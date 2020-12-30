@@ -1,0 +1,24 @@
+.agualess {
+    animation: agualess 1.5s linear infinite;
+}
+
+@keyframes agualess {
+    0% {
+        @include transform(scale(1));
+    }
+    25% {
+        @include transform(rotate(+20deg));
+    }
+    50% {
+        @include transform(scale(1.2) rotate(-10deg));
+    }
+    60% {
+        @include transform(rotate(+30deg));
+    }
+    90% {
+        @include transform(scale(1) rotate(-20deg));
+    }
+    100% {
+        @include transform(scale(1) rotate(0deg));
+    }
+}

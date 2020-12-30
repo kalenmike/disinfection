@@ -42,6 +42,7 @@
 
     freeze(){
         this.living = false;
+        this.virusElem.classList.add('stop-animation');
         this.virusElem.removeEventListener('click', this.die.bind(this));
     }
 
@@ -117,7 +118,7 @@
         virus.setAttribute("draggable", 'false');
         //Set Classes
         virus.classList.add("virus");
-        // virus.classList.add(this.virusClass);
+        virus.classList.add(this.template.class);
         // Set Size
         virus.style.width = this.virusSize + "px";
         virus.style.height = this.virusSize + "px";

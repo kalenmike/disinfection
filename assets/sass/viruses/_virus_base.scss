@@ -16,3 +16,10 @@
 .virus:hover{
     cursor: url("#{$assets-folder}/cursors/crosshair-active.cur"), crosshair;
 }
+
+// Load virus customisations
+@import 'agualess';
+
+.stop-animation{
+    animation:none;
+}

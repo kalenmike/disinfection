@@ -20,7 +20,6 @@ class GameShell {
 
     levelCallback(response){
         if (response.win == true){
-            alert("You Win");
             this.levelNum++;
             this.play();
         }else{
@@ -35,21 +34,33 @@ class GameShell {
     }
 
     showGameMenu() {
-
+        // Set parent
         this.menu = document.createElement("div");
-        // Level Data
-        let levelName = document.createElement("div");
+        this.menu.setAttribute("id", "menu");
+
+        // Logo
+        let logo = document.createElement('div');
+        logo.classList.add("logo");
+        this.menu.appendChild(logo);
+
+        let levelName = document.createElement('div');
+        levelName.setAttribute("id", "header");
         levelName.innerText = this.levelData.name;
         this.menu.appendChild(levelName);
-        let levelInstructions = document.createElement("div");
+
+        let levelInstructions = document.createElement('div');
+        levelInstructions.setAttribute("id", "description");
         levelInstructions.innerText = this.levelData.text;
         this.menu.appendChild(levelInstructions);
+
+        // Level Data
         let levelDifficulty = document.createElement("div");
         levelDifficulty.innerText = 'Difficulty : ' + this.levelData.difficulty;
         this.menu.appendChild(levelDifficulty);
 
         // Start Button
         let startBtn = document.createElement("button");
+        startBtn.classList.add('button');
         startBtn.innerText = "Play Disinfection";
         startBtn.addEventListener('click', ()=>{
             this.removeGameMenu();
@@ -59,6 +70,31 @@ class GameShell {
 
         this.gameMount.appendChild(this.menu);
 
+    }
+
+    createMenu(){
+
+        var menu = document.createElement('div');
+        menu.setAttribute("id", "menu");
+        var logo = document.createElement('div');
+        logo.classList.add("logo");
+        var header = document.createElement('div');
+        header.setAttribute("id", "header");
+        var description = document.createElement('div');
+        description.setAttribute("id", "description");
+        var actions = document.createElement('div');
+        actions.classList.add("actions");
+        var button = document.createElement('div');
+        button.setAttribute("id", "button");
+        button.classList.add("button");
+
+        menu.appendChild(logo);
+        menu.appendChild(header);
+        menu.appendChild(description);
+        menu.appendChild(actions);
+        menu.appendChild(button);
+
+        document.getElementById("game").appendChild(menu);
     }
 
     removeGameMenu(){
