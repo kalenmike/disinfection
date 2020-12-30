@@ -20,11 +20,15 @@ The idea behind this project was to create a browser based game using only vanil
    - [ ] Rules
 
 - [ ] Virus
-    [ ] Spawn
-    [ ] Move
-    [ ] Die
-    [ ] Attack
+   - [x] Spawn
+   - [x] Move
+   - [x] Die
+   - [ ] Attack
+   - [x] Variable Speed
+   - [x] Variable Size
+   - [x] Variable Strength
 
 - [ ] Level
    - [ ] Difficulty
-   - [ ] Time Limit
+   - [x] Variable Time Limit
+   - [x] Variable Enemy Limit
