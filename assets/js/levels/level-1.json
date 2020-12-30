@@ -1,0 +1,8 @@
+{
+    "name"      : "LEVEL ONE",
+    "text"      : "You have 2 seconds to eliminate the virus",
+    "difficulty" : 1,
+    "viruses" : [1],
+    "virusCount" : 1,
+    "timeLimit" : 2000
+}
