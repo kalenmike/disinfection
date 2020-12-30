@@ -1,20 +1,28 @@
-## Disinfection
-A simple click or tap game. Destory all the viruses in time to progress to the next level
+# Disinfection
+Disinfection is a HTML5/Javascript web based game. The aim of the game is to destory all the viruses within the time limit and progress to the next level. With each subsequent level you can expect to find new virus types with different abilities and several suprises along the way.
+
+The idea behind this project was to create a browser based game using only vanilla javascript and avoiding any unnecessary libraries. Babel was allowed as it is needed to convert the ECMA6 JS so that the game is playable on some of the unsupported browsers, including mobile.
+
+## Technologies Used
+HTML5
+Sass
+Javascript ECMA 6
+Babel
 
 ## Todo
 
-[ ] Game Functions
-    [x] Start
-    [x] Game Over
-    [x] Game Won
-    [ ] Rules
+- [ ] Game Functions
+   - [x] Start
+   - [x] Game Over
+   - [x] Game Won
+   - [ ] Rules
 
-[ ] Virus
+- [ ] Virus
     [ ] Spawn
     [ ] Move
     [ ] Die
     [ ] Attack
 
-[ ] Level
-    [ ] Difficulty
-    [ ] Time Limit
+- [ ] Level
+   - [ ] Difficulty
+   - [ ] Time Limit
