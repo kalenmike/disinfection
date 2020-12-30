@@ -1,4 +1,4 @@
-![Dsinfection Logo](/img/disinfection-logo.svg)
+![Disinfection Logo](/assets/img/disinfection-logo.svg)
 
 # Disinfection
 Disinfection is a HTML5/Javascript web based game. The aim of the game is to destory all the viruses within the time limit and progress to the next level. With each subsequent level you can expect to find new virus types with different abilities and several suprises along the way.
