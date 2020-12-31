@@ -2,7 +2,12 @@
     "name"      : "LEVEL ONE - The Bedroom",
     "text"      : "The alarm clock sounds and you jump up ready for a new day. The curtains open and through the windows you spot some viruses trying to contaminate your room. Stop them before its too late.",
     "difficulty" : "🦠",
-    "viruses" : [1],
+    "viruses" : [
+        {
+            "id":1,
+            "alert":true
+        }
+    ],
     "virusCount" : 10,
     "spawnTime" : {"min":1000, "max":1000},
     "timeLimit" : 12000,

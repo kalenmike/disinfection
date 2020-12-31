@@ -2,7 +2,24 @@
     "name"      : "LEVEL FIVE - The Living Room",
     "text"      : "Almost there! Lets disinfect the living room and then we are free to head on out.",
     "difficulty" : "🦠 🦠 🦠 🦠 🦠",
-    "viruses" : [1, 2, 3, 4],
+    "viruses" : [
+        {
+            "id":1,
+            "alert":false
+        },
+        {
+            "id":2,
+            "alert":false
+        },
+        {
+            "id":3,
+            "alert":false
+        },
+        {
+            "id":4,
+            "alert":true
+        }
+    ],
     "virusCount" : 30,
     "spawnTime" : {"min":400, "max":700},
     "timeLimit" : 23000,

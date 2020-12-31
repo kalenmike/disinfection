@@ -2,7 +2,12 @@
     "name"      : "LEVEL TWO - The Bathroom",
     "text"      : "With the bedroom clean its time to wash up. Too bad some viruses found there way in here too. Lets get scrubbing!",
     "difficulty" : "🦠 🦠",
-    "viruses" : [1],
+    "viruses" : [
+        {
+            "id":1,
+            "alert":false
+        }
+    ],
     "virusCount" : 15,
     "spawnTime" : {"min":800, "max":1000},
     "timeLimit" : 17000,

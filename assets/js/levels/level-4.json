@@ -2,7 +2,20 @@
     "name"      : "LEVEL FOUR - The Dinning Room",
     "text"      : "The dinning table too! Oh no, we gotta get this under control quickly!",
     "difficulty" : "🦠 🦠 🦠 🦠",
-    "viruses" : [1, 2, 3, 4],
+    "viruses" : [
+        {
+            "id":1,
+            "alert":false
+        },
+        {
+            "id":2,
+            "alert":false
+        },
+        {
+            "id":3,
+            "alert":true
+        }
+    ],
     "virusCount" : 25,
     "spawnTime" : {"min":500, "max":800},
     "timeLimit" : 22000,

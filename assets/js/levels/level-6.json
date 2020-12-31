@@ -2,7 +2,24 @@
     "name"      : "LEVEL FIVE - The Street",
     "text"      : "Ok! Now its obvious where they are all coming from. But with all your practice this should be an easy fix.",
     "difficulty" : "🦠 🦠 🦠 🦠 🦠 🦠",
-    "viruses" : [1, 2, 3, 4],
+    "viruses" : [
+        {
+            "id":1,
+            "alert":false
+        },
+        {
+            "id":2,
+            "alert":false
+        },
+        {
+            "id":3,
+            "alert":false
+        },
+        {
+            "id":4,
+            "alert":false
+        }
+    ],
     "virusCount" : 50,
     "spawnTime" : {"min":0, "max":500},
     "timeLimit" : 27000,

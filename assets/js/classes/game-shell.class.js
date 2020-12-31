@@ -189,8 +189,22 @@ class GameShell {
         let progressBar = this.createElementWithId("div", "progress-bar");
         progressBox.appendChild(progressBar);
 
+        // Alert
+        let alert = this.createElementWithId("div", "alert");
+        alert.addEventListener('click', (event)=>{
+            event.currentTarget.classList.add('hide');
+            event.currentTarget.classList.remove('show');
+        })
+        let preview = this.createElementWithId("img", "preview");
+        let writeUp = this.createElementWithId("div", "write-up");
+
+        alert.appendChild(preview);
+        alert.appendChild(writeUp);
+
         level.appendChild(levelName);
         level.appendChild(progressBox);
+
+        this.virusBox.appendChild(alert);
 
         this.virusBox.appendChild(level);
         // this.gameMount.appendChild(version);

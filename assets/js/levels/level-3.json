@@ -2,7 +2,16 @@
     "name"      : "LEVEL THREE - The Kitchen",
     "text"      : "Breakfast is the meal of champions! Unfortunately the viruses are spreading faster than we can keep up. Save the food!",
     "difficulty" : "🦠 🦠 🦠",
-    "viruses" : [1, 2],
+    "viruses" : [
+        {
+            "id":1,
+            "alert":false
+        },
+        {
+            "id":2,
+            "alert":true
+        }
+    ],
     "virusCount" : 20,
     "spawnTime" : {"min":600, "max":900},
     "timeLimit" : 20000,
