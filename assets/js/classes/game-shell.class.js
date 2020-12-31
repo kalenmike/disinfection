@@ -80,6 +80,7 @@ class GameShell {
         // Level Data
         let levelDifficulty = document.createElement("div");
         levelDifficulty.innerText = "Difficulty : " + this.levelData.difficulty;
+        levelDifficulty.setAttribute("id", "difficulty");
         this.menu.appendChild(levelDifficulty);
 
         // Start Button
@@ -156,7 +157,7 @@ class GameShell {
 
         let levelInstructions = document.createElement("div");
         levelInstructions.setAttribute("id", "description");
-        levelInstructions.innerText = "Try harder next time";
+        levelInstructions.innerText = "So close, but so far. Think you can handle it next time round?";
         this.menu.appendChild(levelInstructions);
 
         // Start Button

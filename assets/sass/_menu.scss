@@ -26,9 +26,17 @@
 }
 #menu #description {
     font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
     margin-bottom: 3rem;
     padding: 0 2rem;
     max-width: 800px;
+}
+
+#menu #difficulty{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-size: 1em;
+    padding-bottom: 2rem;
 }
 
 .logo {
