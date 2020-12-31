@@ -5,6 +5,8 @@ Disinfection is a HTML5/Javascript web based game. The aim of the game is to des
 
 The idea behind this project was to create a browser based game using only vanilla javascript and avoiding any unnecessary libraries. Babel was allowed as it is needed to convert the ECMA6 JS so that the game is playable on some of the unsupported browsers, including mobile.
 
+Play the game [here](https://www.kalenmichael.com/disinfection/).
+
 ## Technologies Used
 * HTML5
 * Sass
