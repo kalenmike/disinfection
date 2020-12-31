@@ -3,28 +3,28 @@
     "name": "Disinfection",
     "icons":[
         {
-            "src":"/assets/img/favicons/favicon-180x180.png",
+            "src":"./assets/img/favicons/favicon-180x180.png",
             "type":"image/png",
             "sizes": "180x180"
         },
         {
-            "src":"/assets/img/favicons/favicon-512.png",
+            "src":"./assets/img/favicons/favicon-512.png",
             "type":"image/png",
             "sizes": "512x512"
         },
         {
-            "src":"/assets/img/favicons/favicon-maskable.png",
+            "src":"./assets/img/favicons/favicon-maskable.png",
             "type":"image/png",
             "sizes": "800x800",
             "purpose":"maskable any"
         },
         {
-            "src":"/assets/img/favicons/favicon-2024.png",
+            "src":"./assets/img/favicons/favicon-2024.png",
             "type":"image/png",
             "sizes": "2024x2024"
         }
     ],
-    "start_url": "/index.html",
+    "start_url": "./index.html",
     "background_color":"#0e4387",
     "display":"standalone",
     "theme_color":"#0e4387"
