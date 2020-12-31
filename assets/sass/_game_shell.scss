@@ -1,29 +1,29 @@
-.main-menu{
-    list-style:none;
-    margin-top:2em;
+.main-menu {
+    list-style: none;
+    margin-top: 2em;
 
-    li + li{
-        margin-top:1em;
+    li + li {
+        margin-top: 1em;
     }
 
-    li:hover::before{
-        content:">";
-        margin-right:1em;
+    li:hover::before {
+        content: ">";
+        margin-right: 1em;
     }
 
-    li:hover::after{
-        content:"<";
-        margin-left:1em;
+    li:hover::after {
+        content: "<";
+        margin-left: 1em;
     }
 
-    a{
+    a {
         text-decoration: none;
-        color:inherit;
+        color: inherit;
     }
 }
 
-.version{
-    font-size:0.8em;
+.version {
+    font-size: 0.8em;
 }
 
 #menu {
@@ -45,10 +45,10 @@
     opacity: 0;
     animation: fade-in 1s forwards;
 
-    &.no-animation{
+    &.no-animation {
         transition: 0;
         opacity: 1;
-        animation:none;
+        animation: none;
     }
 
     #header {
@@ -122,7 +122,7 @@
         background-color: #bdd5db;
 
         #progress-bar {
-            width:100%;
+            width: 100%;
             height: 100%;
             background-color: #049104;
             transition: width 1s;
@@ -130,7 +130,7 @@
     }
 }
 
-#alert{
+#alert {
     position: absolute;
     bottom: -100%;
     left: -100%;
@@ -142,32 +142,31 @@
     padding: 1em;
     color: #fff;
     z-index: 200;
-    transition:0.3s;
+    transition: 0.3s;
 
-    img{
-        width:100px;
+    img {
+        width: 100px;
     }
 
-    .name{
-        font-family:$primaryFont;
+    .name {
+        font-family: $primaryFont;
         text-transform: capitalize;
     }
 
-    td{
+    td {
         text-align: right;
 
-        +td{
-            padding-left:1em;
+        + td {
+            padding-left: 1em;
         }
     }
-    
-    &.show{
+
+    &.show {
         animation: slide-up 1s forwards;
     }
-    &.hide{
+    &.hide {
         animation: slide-left 1s forwards;
     }
-
 }
 
 .arrow {
@@ -175,53 +174,101 @@
     border-width: 0 7px 7px 0;
     display: inline-block;
     padding: 7px;
-    position:fixed;
-    margin:1em;
-    transition:0.7s;
-    opacity:0;
+    position: fixed;
+    margin: 1em;
+    transition: 0.7s;
+    opacity: 0;
 
-    &.left{
-        top:50%;
-        left:0;
+    &.left {
+        top: 50%;
+        left: 0;
         transform: rotate(-45deg) translateY(-50%);
     }
 
-    &.right{
-        top:50%;
-        right:0;
+    &.right {
+        top: 50%;
+        right: 0;
         transform: rotate(135deg) translateY(-50%);
     }
 
-    &.top{
-        top:100px;
-        left:50%;
+    &.top {
+        top: 100px;
+        left: 50%;
         transform: rotate(45deg) translateX(-50%);
     }
 
-    &.bottom{
-        bottom:0;
-        left:50%;
+    &.bottom {
+        bottom: 0;
+        left: 50%;
         transform: rotate(-135deg) translateX(-50%);
     }
 
-    &.play{
-        animation:flash 0.5s 2;
+    &.play {
+        animation: flash 0.5s 2;
     }
-  }
+}
 
-@keyframes flash{
-    0%{
-        opacity:0.2
+#test-tube {
+    height: 150px;
+    width: auto;
+    position: absolute;
+    bottom: 2em;
+    right: 1em;
+}
+#tube-one,
+#tube-two,
+#tube-three,
+#tube-four,
+#tube-five,
+#tube-six,
+#tube-seven,
+#tube-eight {
+    opacity: 0;
+    transition: opacity 5s;
+}
+
+#clean-stats{
+    position:fixed;
+    top:0;
+    left:0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:120px;
+    height:120px;
+
+    color:#6ebfe2;
+    background-color:rgba(255,255,255,0.7);
+    border-radius: 50%;
+    padding:1em;
+    margin:1em;
+
+    #clean-count{
+        font-size:1.5em;
+        font-weight: bold;
+        font-family: $secondaryFont;
     }
-    50%{
+
+    .text{
+        font-family:$primaryFont;
+        text-transform: uppercase;
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 0.2;
+    }
+    50% {
         opacity: 1;
     }
-    100%{
+    100% {
         opacity: 0;
     }
 }
 
-@keyframes slide-up{
+@keyframes slide-up {
     from {
         bottom: -100%;
         left: 0;

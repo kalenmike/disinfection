@@ -13,7 +13,7 @@ class Level {
      * @param {object} levelData An object containing all the level data
      * @param {function} callback The callback to fire when the level finishes
      */
-    constructor(levelData, callback) {
+    constructor(levelData, cleanCount, callback) {
         this.template = levelData;
         this.callback = callback;
 
@@ -25,6 +25,9 @@ class Level {
         this.living = 0; // Count of viruses still alive
         this.active = true; // Whether the level is active or finished
         this.currentTime = this.template.timeLimit;
+        this.cleanCount = cleanCount;
+
+        this.maxAlive = 10;
 
         this.decrementPercent = (1000 / this.template.timeLimit) / 10; // For updating the progress bar, 1 second / timeLimit
 
@@ -61,7 +64,7 @@ class Level {
      * Spawn virus at interval until the level limit has been reached
      */
     spawnViruses(){
-        if (this.spawned < this.template.virusCount){
+        if (this.spawned < this.template.virusCount && this.active){
             let random = Math.floor(
                 Math.random() * this.virusTypes.length
             ); // Random number between 0 & length
@@ -79,6 +82,7 @@ class Level {
             );
             this.spawned++;
             this.living++;
+            this.adjustVirusPPM(this.living / this.maxAlive * 100);
             this.viruses.push(virus);
             setTimeout(this.spawnViruses.bind(this), this.randomNumberBetween(this.template.spawnTime.min, this.template.spawnTime.max));
         }
@@ -107,10 +111,16 @@ class Level {
 
     virusDeath() {
         this.living--;
+        this.adjustVirusPPM(this.living / this.maxAlive * 100);
+        this.updateCleanCount();
         if (this.spawned == this.template.virusCount && this.living == 0) {
-            clearTimeout(this.timeLimit);
             this.submitOutcome(true);
         }
+    }
+
+    updateCleanCount(){
+        this.cleanCount++;
+        document.getElementById('clean-count').innerText = this.cleanCount;
     }
 
     /**
@@ -126,7 +136,7 @@ class Level {
             });
             let response = {
                 win: status,
-                time: "20",
+                cleanCount: this.cleanCount
             };
             this.callback(response);
         }
@@ -157,6 +167,39 @@ class Level {
         );
         const virusData = response.json();
         return virusData;
+    }
+
+    /**
+     * Update the gui to reflect the users health
+     * @param {integer} percentage 
+     */
+    adjustVirusPPM(percentage){
+        if(percentage < 12.5){
+            document.getElementById("tube-eight").style.opacity = "1";
+            document.getElementById("tube-one").style.opacity = "1";
+        }else if (percentage < 25){
+            document.getElementById("tube-one").style.opacity = "";
+            document.getElementById("tube-two").style.opacity = "1";
+        }else if (percentage < 37.5){
+            document.getElementById("tube-two").style.opacity = "";
+            document.getElementById("tube-three").style.opacity = "1";
+        }else if (percentage < 50){
+            document.getElementById("tube-three").style.opacity = "";
+            document.getElementById("tube-four").style.opacity = "1";
+        }else if (percentage < 62.5){
+            document.getElementById("tube-four").style.opacity = "";
+            document.getElementById("tube-five").style.opacity = "1";
+        }else if (percentage < 75){
+            document.getElementById("tube-five").style.opacity = "";
+            document.getElementById("tube-six").style.opacity = "1";
+        }else if (percentage < 87.5){
+            document.getElementById("tube-six").style.opacity = "";
+            document.getElementById("tube-seven").style.opacity = "1";
+        }else if (percentage > 87.5 && percentage < 100){
+            document.getElementById("tube-seven").style.opacity = "";
+        }else if (percentage >= 100){
+            this.submitOutcome(false);
+        }
     }
 
     // [DEV] This code is duplicated in level.class and virus.class

@@ -211,6 +211,52 @@ body {
   animation: flash 0.5s 2;
 }
 
+#test-tube {
+  height: 150px;
+  width: auto;
+  position: absolute;
+  bottom: 2em;
+  right: 1em;
+}
+
+#tube-one,
+#tube-two,
+#tube-three,
+#tube-four,
+#tube-five,
+#tube-six,
+#tube-seven,
+#tube-eight {
+  opacity: 0;
+  transition: opacity 5s;
+}
+
+#clean-stats {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  color: #6ebfe2;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  padding: 1em;
+  margin: 1em;
+}
+#clean-stats #clean-count {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+#clean-stats .text {
+  font-family: "Baloo 2", cursive;
+  text-transform: uppercase;
+}
+
 @keyframes flash {
   0% {
     opacity: 0.2;
