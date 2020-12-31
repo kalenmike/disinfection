@@ -4,8 +4,8 @@ self.addEventListener('install', function(event){
             return cache.addAll([
                 'index.html',
                 'manifest.json',
-                'dist/main.js',
-                'assets/*',
+                './dist/main.js',
+                './assets/*',
                 'https://fonts.googleapis.com/css?family=Baloo+2|Roboto&display=swap'
             ]);
         })
