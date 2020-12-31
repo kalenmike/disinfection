@@ -8,4 +8,6 @@
 
 //Game Shell - Start, Game Over, Game Won, Rules
 
+import GameShell from './classes/game-shell.class.js';
+
 let game = new GameShell('disinfection');

@@ -1,12 +1,7 @@
-/**
- *   @Author      : Kalen Michael
- *   @Website     : https://www.kalenmichael.com
- *   @Version     : 1.0.0
- *   @Created     : 30 December 2020
- *   @Modified    : 30 December 2020
- */
+import Page from './page.class.js';
+import Level from './level.class.js';
 
-class GameShell {
+export default class GameShell {
     levelData; // Holds the level data as js object
     level; // Holds the level object created via the Level class
     menu;
@@ -389,7 +384,7 @@ class GameShell {
 
     async loadLevelData() {
         const response = await fetch(
-            "/assets/js/levels/level-" + this.levelNum + ".json"
+            "/assets/json/levels/level-" + this.levelNum + ".json"
         );
         if (response.status != 404) {
             const levelData = response.json();

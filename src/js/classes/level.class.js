@@ -1,11 +1,6 @@
-/**
- *   @Author      : Kalen Michael
- *   @Website     : https://www.kalenmichael.com
- *   @Version     : 1.0.0
- *   @Created     : 30 December 2020
- */
+import Virus from './virus.class.js';
 
-class Level {
+export default class Level {
     timeLimit; // Holds the timeout
     
 
@@ -163,7 +158,7 @@ class Level {
      */
     async loadVirusData(virus) {
         const response = await fetch(
-            "/assets/js/viruses/virus-" + virus.id + ".json"
+            "/assets/json/viruses/virus-" + virus.id + ".json"
         );
         const virusData = response.json();
         return virusData;

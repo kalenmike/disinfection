@@ -1,5 +1,4 @@
-
-class Page{
+export default class Page{
 
     constructor(name){
         this.container = document.createElement('div');
