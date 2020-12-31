@@ -4,5 +4,6 @@
     "difficulty" : 1,
     "viruses" : [1, 2],
     "virusCount" : 10,
-    "timeLimit" : 20000
+    "timeLimit" : 20000,
+    "imagePath": "/assets/img/backgrounds/kitchen-desktop.png"
 }

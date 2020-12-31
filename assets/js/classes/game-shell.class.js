@@ -32,6 +32,7 @@ class GameShell {
         // Reset all viruses
         if (this.virusBox) {
             this.gameMount.removeChild(this.virusBox);
+            this.virusBox = null;
         }
         this.loadLevelData() // Load the json in an object
             .then((levelData) => {
@@ -95,6 +96,12 @@ class GameShell {
         this.menu.appendChild(startBtn);
 
         this.gameMount.appendChild(this.menu);
+
+        // Load the next levels image
+        setTimeout(() => { // [DEV] We can do better than this solution
+            let backgroundImage = 'url("' + this.levelData.imagePath + '")';
+            this.gameMount.style.backgroundImage = backgroundImage;
+        }, 1000);
     }
 
     showGameCompleteMenu() {

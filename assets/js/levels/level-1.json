@@ -4,5 +4,6 @@
     "difficulty" : 1,
     "viruses" : [1],
     "virusCount" : 1,
-    "timeLimit" : 4000
+    "timeLimit" : 4000,
+    "imagePath": "/assets/img/backgrounds/bedroom-desktop.png"
 }
