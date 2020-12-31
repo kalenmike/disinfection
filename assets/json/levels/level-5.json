@@ -23,5 +23,5 @@
     "virusCount" : 80,
     "spawnTime" : {"min":400, "max":700},
     "timeLimit" : 62000,
-    "imagePath": "/assets/img/backgrounds/living-desktop.png"
+    "imagePath": "./assets/img/backgrounds/living-desktop.png"
 }

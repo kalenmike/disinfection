@@ -3,6 +3,6 @@
     "strength"  : 3,
     "size"      : {"min":40, "max":80},
     "speed"     : {"min":5, "max":8},
-    "imagePath" : "/assets/img/viruses/virus-4.svg",
+    "imagePath" : "./assets/img/viruses/virus-4.svg",
     "class"     : "cosmotion"
 }

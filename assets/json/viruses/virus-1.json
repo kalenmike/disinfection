@@ -3,6 +3,6 @@
     "strength"  : 1,
     "size"      : {"min":50, "max":120},
     "speed"     : {"min":10, "max":15},
-    "imagePath" : "/assets/img/viruses/virus-1.svg",
+    "imagePath" : "./assets/img/viruses/virus-1.svg",
     "class"     : "agualess"
 }

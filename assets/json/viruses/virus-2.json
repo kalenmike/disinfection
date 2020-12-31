@@ -3,6 +3,6 @@
     "strength"  : 2,
     "size"      : {"min":30, "max":90},
     "speed"     : {"min":8, "max":10},
-    "imagePath" : "/assets/img/viruses/virus-2.svg",
+    "imagePath" : "./assets/img/viruses/virus-2.svg",
     "class"     : "septore"
 }

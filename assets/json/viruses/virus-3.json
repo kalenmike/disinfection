@@ -3,6 +3,6 @@
     "strength"  : 3,
     "size"      : {"min":40, "max":70},
     "speed"     : {"min":6, "max":9},
-    "imagePath" : "/assets/img/viruses/virus-3.svg",
+    "imagePath" : "./assets/img/viruses/virus-3.svg",
     "class"     : "flexoria"
 }
