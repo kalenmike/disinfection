@@ -88,7 +88,7 @@ class GameShell {
         startBtn.classList.add("button");
         startBtn.innerText = "Play Disinfection";
         startBtn.addEventListener("click", () => {
-            this.buildGUI();
+            this.buildLevelGUI();
             this.removeGameMenu();
             this.level = new Level(
                 this.levelData,
@@ -178,20 +178,22 @@ class GameShell {
     }
 
     //Build GUI
-    buildGUI() {
+    buildLevelGUI() {
 
-        //Beta 1.4.1
-        var version = this.createElementWithId("div", "version");
-        var level = this.createElementWithId("div", "level");
-        var levelName = this.createElementWithId("div", "level-name");
-        var progressBox = this.createElementWithId("div", "progress-box");
-        var progressBar = this.createElementWithId("div", "progress-bar");
+        // let version = this.createElementWithId("div", "version");
 
+        let level = this.createElementWithId("div", "level");
+        let levelName = this.createElementWithId("div", "level-name");
+        levelName.innerText = this.levelData.name;
+        let progressBox = this.createElementWithId("div", "progress-box");
+        let progressBar = this.createElementWithId("div", "progress-bar");
         progressBox.appendChild(progressBar);
-        level.appendChild(progressBox);
+
         level.appendChild(levelName);
-        this.gameMount.appendChild(version);
-        this.gameMount.appendChild(level);
+        level.appendChild(progressBox);
+
+        this.virusBox.appendChild(level);
+        // this.gameMount.appendChild(version);
     }
 
     createElementWithId(elementType, id) {

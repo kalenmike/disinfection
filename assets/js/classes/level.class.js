@@ -17,12 +17,15 @@ class Level {
         this.template = levelData;
         this.callback = callback;
 
-        // Initialise empty vars
-        this.virusTypes = []; // An array holding all the levels virus types
+        // Initialise default vars
+        this.virusTypes = []; // An array holding all the levels virus types templates
         this.viruses = []; // An array holding all the viruses objects from the class Virus
-        this.spawned = 0;
-        this.living = 0;
+        this.spawned = 0; // Count of viruses spawned
+        this.living = 0; // Count of viruses still alive
         this.active = true; // Whether the level is active or finished
+        this.currentTime = this.template.timeLimit;
+
+        this.decrementPercent = (1000 / this.template.timeLimit) / 10; // For updating the progress bar, 1 second / timeLimit
 
         this.loadAllVirusData().then(() => this.start());
     }
@@ -33,9 +36,24 @@ class Level {
     start() {
         this.spawnViruses();
 
-        this.timeLimit = setTimeout(() => {
-            this.submitOutcome(false);
-        }, this.template.timeLimit);
+        this.startLevelTimer();
+
+        // this.timeLimit = setTimeout(() => {
+        //     this.submitOutcome(false);
+        // }, this.template.timeLimit);
+    }
+
+    startLevelTimer(){
+        const progressBar = document.getElementById('progress-bar');
+        this.timeLimit = setInterval(() =>{
+            if (this.currentTime <= 0){
+                progressBar.style.width = "0";
+                this.submitOutcome(false);
+                return;
+            }
+            this.currentTime -= 1000;
+            progressBar.style.width = (this.currentTime * this.decrementPercent) + "%";
+        },1000);// Run every second
     }
 
     /**
@@ -71,6 +89,7 @@ class Level {
     submitOutcome(status) {
         if (this.active) {
             this.active = false;
+            clearInterval(this.timeLimit);
             // Kill all living viruses
             this.viruses.forEach((virus) => {
                 virus.freeze();
