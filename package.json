@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel": "./node_modules/.bin/babel src/js/main.js --out-file dist/game.js",
-    "dev": "./node_modules/.bin/webpack"
+    "dev": "NODE_ENV=development ./node_modules/.bin/webpack",
+    "prod": "NODE_ENV=production ./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",

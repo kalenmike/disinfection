@@ -384,7 +384,7 @@ export default class GameShell {
 
     async loadLevelData() {
         const response = await fetch(
-            "/assets/json/levels/level-" + this.levelNum + ".json"
+            "./assets/json/levels/level-" + this.levelNum + ".json"
         );
         if (response.status != 404) {
             const levelData = response.json();

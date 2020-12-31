@@ -158,7 +158,7 @@ export default class Level {
      */
     async loadVirusData(virus) {
         const response = await fetch(
-            "/assets/json/viruses/virus-" + virus.id + ".json"
+            "./assets/json/viruses/virus-" + virus.id + ".json"
         );
         const virusData = response.json();
         return virusData;
