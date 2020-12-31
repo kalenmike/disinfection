@@ -7,60 +7,127 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disinfection - Save Your House Today</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Disinfection - Save Your House Today</title>
 
-    <link rel="canonical" href="https://www.kalenmichael.com/disinfection" />
+        <link
+            rel="canonical"
+            href="https://www.kalenmichael.com/disinfection"
+        />
 
-    <!-- PWA -->
-    <meta name="theme-color" content="#0e4387"/>
-    <link rel="manifest" href="./manifest.json" />
-    <script>
-        /* Check browser support */
-        if ('serviceWorker' in navigator){
-            navigator.serviceWorker.register('./sw.js', {scope: './'})
-        }
-    </script>
+        <!-- PWA -->
+        <meta name="theme-color" content="#0e4387" />
+        <link rel="manifest" href="./manifest.json" />
+        <script>
+            /* Check browser support */
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("./sw.js", { scope: "./" });
+            }
+        </script>
 
-    <!-- Social Meta's -->
-	<meta name="description" content="Save Your House Today" />
-	<meta name="robots" content="index, follow" />
-	<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-	<meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-	<meta property="og:locale" content="es" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Disinfection - Save Your House Today" />
-	<meta property="og:description" content="Expertos en Realidad virtual, Video y Fotografía 3D en Madrid. Planteamos soluciones 3D, VR y material de marketing para Hoteles, Hostels e Inmobiliaria." />
-	<meta property="og:url" content="https://www.kalenmichael.com/disinfection" />
-	<meta property="og:site_name" content="Disinfection - Save Your House Today" />
-	<meta property="og:image" content="https://www.kalenmichael.com/disinfection/assets/img/social-image.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
+        <!-- Social Meta's -->
+        <meta name="description" content="Save Your House Today" />
+        <meta name="robots" content="index, follow" />
+        <meta
+            name="googlebot"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta
+            name="bingbot"
+            content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta property="og:locale" content="es" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="Disinfection - Save Your House Today"
+        />
+        <meta
+            property="og:description"
+            content="Expertos en Realidad virtual, Video y Fotografía 3D en Madrid. Planteamos soluciones 3D, VR y material de marketing para Hoteles, Hostels e Inmobiliaria."
+        />
+        <meta
+            property="og:url"
+            content="https://www.kalenmichael.com/disinfection"
+        />
+        <meta
+            property="og:site_name"
+            content="Disinfection - Save Your House Today"
+        />
+        <meta
+            property="og:image"
+            content="https://www.kalenmichael.com/disinfection/assets/img/social-image.jpg"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Favicons -->
-    <link rel="icon" href="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon.png" type="image/png">
+        <!-- Favicons -->
+        <link
+            rel="icon"
+            href="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon.png"
+            type="image/png"
+        />
 
-    <!-- Favicons -->
-	<link rel="icon" href="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon-32x32.png" sizes="32x32" />
-	<link rel="icon" href="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon-192x192.png" sizes="192x192" />
-	<link rel="apple-touch-icon" href="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon-180x180.png" />
-	<meta name="msapplication-TileImage" content="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon-270x270.png" />
-	<link rel="shortcut icon" sizes="196x196" href="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon-196x196.png">
+        <!-- Favicons -->
+        <link
+            rel="icon"
+            href="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon-32x32.png"
+            sizes="32x32"
+        />
+        <link
+            rel="icon"
+            href="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon-192x192.png"
+            sizes="192x192"
+        />
+        <link
+            rel="apple-touch-icon"
+            href="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon-180x180.png"
+        />
+        <meta
+            name="msapplication-TileImage"
+            content="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon-270x270.png"
+        />
+        <link
+            rel="shortcut icon"
+            sizes="196x196"
+            href="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon-196x196.png"
+        />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Baloo+2|Roboto&display=swap" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+            crossorigin
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Baloo+2|Roboto&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- Base CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+        <!-- Base CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" />
 
-</head>
-<body>
-    <div id="disinfection"></div>
+        <!-- Google Analytics -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-16905202-5"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-    <!-- Compiled JS -->
-    <script src="dist/main.js"></script>
-</body>
+            gtag("config", "UA-16905202-5");
+        </script>
+    </head>
+    <body>
+        <div id="disinfection"></div>
+
+        <!-- Compiled JS -->
+        <script src="dist/main.js"></script>
+    </body>
 </html>
