@@ -1,0 +1,25 @@
+{
+  "name": "disinfection",
+  "version": "1.0.0",
+  "description": "Clean the viruses and save your space. HTML/Javascript game",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KalenMike/Disinfection.git"
+  },
+  "keywords": [
+    "game",
+    "play",
+    "javascript",
+    "viruses"
+  ],
+  "author": "Kalen Michael",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/KalenMike/Disinfection/issues"
+  },
+  "homepage": "https://github.com/KalenMike/Disinfection#readme"
+}
