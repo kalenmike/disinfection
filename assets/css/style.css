@@ -25,6 +25,9 @@ body {
   list-style: none;
   margin-top: 2em;
 }
+.main-menu li {
+  cursor: pointer;
+}
 .main-menu li + li {
   margin-top: 1em;
 }
@@ -35,10 +38,6 @@ body {
 .main-menu li:hover::after {
   content: "<";
   margin-left: 1em;
-}
-.main-menu a {
-  text-decoration: none;
-  color: inherit;
 }
 
 .version {
@@ -255,6 +254,33 @@ body {
 #clean-stats .text {
   font-family: "Baloo 2", cursive;
   text-transform: uppercase;
+}
+
+.page-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 95vw;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 201;
+  cursor: auto;
+  padding: 1em;
+}
+.page-overlay * {
+  text-align: center;
+}
+.page-overlay .close-overlay {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  padding: 0.2em;
+  font-size: 2em;
+  cursor: pointer;
 }
 
 @keyframes flash {

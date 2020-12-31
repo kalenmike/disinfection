@@ -80,28 +80,36 @@ class GameShell {
         let mainmenu = [
             {
                 "text":"Rules",
-                "link":"#"
+                "name":"rules"
             },
             {
                 "text":"About",
-                "link":"#"
+                "name":"about"
             },
             {
                 "text":"Credits",
-                "link":"#"
+                "name":"credits"
             }
         ];
 
-        let innerHTML = '<p class="version">Version 1.0.0</p><ul class="main-menu">';
+        let p = document.createElement('p');
+        p.classList.add('version');
+        p.innerText = 'Version 1.0.0';
+
+        let ul = document.createElement('ul');
+        ul.classList.add('main-menu');
 
         mainmenu.forEach(menuItem =>{
-            innerHTML += 
-            '<li><a href="'+menuItem.link + '">' + menuItem.text + '</a></li>';
+            let li = document.createElement('li');
+            li.innerText = menuItem.text;
+            li.addEventListener('click', ()=>{
+                this.openPage(menuItem.name);
+            });
+            ul.appendChild(li);
         });
 
-        innerHTML += '</ul>';
-
-        content.innerHTML = innerHTML;
+        content.appendChild(p);
+        content.appendChild(ul);
 
         this.menu.appendChild(content);
 
@@ -116,6 +124,11 @@ class GameShell {
         this.menu.appendChild(startBtn);
 
         this.gameMount.appendChild(this.menu);
+    }
+
+    openPage(name){
+        let page = new Page(name);
+        this.gameMount.appendChild(page);
     }
 
     showGameMenu() {
