@@ -16,7 +16,7 @@ class GameShell {
         this.gameMount = document.getElementById(elemID);
         this.levelNum = 1; // Initiate at level 1
 
-        this.play();
+        this.showMainMenu();
     }
 
     levelCallback(response) {
@@ -50,6 +50,66 @@ class GameShell {
                     console.log(error);
                 }
             });
+    }
+
+    showMainMenu() {
+        // Set parent
+        this.menu = document.createElement("div");
+        this.menu.setAttribute("id", "menu");
+        this.menu.classList.add("no-animation");
+
+        // Logo
+        let logo = document.createElement("div");
+        logo.classList.add("logo");
+        this.menu.appendChild(logo);
+
+        let levelName = document.createElement("div");
+        levelName.setAttribute("id", "header");
+        levelName.innerText = "Time to fight back";
+        this.menu.appendChild(levelName);
+
+        let content = document.createElement("div");
+        content.setAttribute("id", "description");
+
+        let mainmenu = [
+            {
+                "text":"Rules",
+                "link":"#"
+            },
+            {
+                "text":"About",
+                "link":"#"
+            },
+            {
+                "text":"Credits",
+                "link":"#"
+            }
+        ];
+
+        let innerHTML = '<p class="version">Version 1.0.0</p><ul class="main-menu">';
+
+        mainmenu.forEach(menuItem =>{
+            innerHTML += 
+            '<li><a href="'+menuItem.link + '">' + menuItem.text + '</a></li>';
+        });
+
+        innerHTML += '</ul>';
+
+        content.innerHTML = innerHTML;
+
+        this.menu.appendChild(content);
+
+        // Start Button
+        let startBtn = document.createElement("button");
+        startBtn.classList.add("button");
+        startBtn.innerText = "Play Disinfection";
+        startBtn.addEventListener("click", () => {
+            this.play();
+            this.removeGameMenu();
+        });
+        this.menu.appendChild(startBtn);
+
+        this.gameMount.appendChild(this.menu);
     }
 
     showGameMenu() {
@@ -86,7 +146,7 @@ class GameShell {
         // Start Button
         let startBtn = document.createElement("button");
         startBtn.classList.add("button");
-        startBtn.innerText = "Play Disinfection";
+        startBtn.innerText = "Start Level";
         startBtn.addEventListener("click", () => {
             this.buildLevelGUI();
             this.removeGameMenu();
@@ -198,6 +258,24 @@ class GameShell {
         let preview = this.createElementWithId("img", "preview");
         let writeUp = this.createElementWithId("div", "write-up");
 
+        // Entry Arrows
+        let fromTop = this.createElementWithId("div", "from-top");
+        let fromRight = this.createElementWithId("div", "from-right");
+        let fromBottom = this.createElementWithId("div", "from-bottom");
+        let fromLeft = this.createElementWithId("div", "from-left");
+
+        fromTop.classList.add('arrow');
+        fromTop.classList.add('top');
+
+        fromRight.classList.add('arrow');
+        fromRight.classList.add('right');
+
+        fromBottom.classList.add('arrow');
+        fromBottom.classList.add('bottom');
+
+        fromLeft.classList.add('arrow');
+        fromLeft.classList.add('left');
+
         alert.appendChild(preview);
         alert.appendChild(writeUp);
 
@@ -205,6 +283,11 @@ class GameShell {
         level.appendChild(progressBox);
 
         this.virusBox.appendChild(alert);
+
+        this.virusBox.appendChild(fromTop);
+        this.virusBox.appendChild(fromRight);
+        this.virusBox.appendChild(fromBottom);
+        this.virusBox.appendChild(fromLeft);
 
         this.virusBox.appendChild(level);
         // this.gameMount.appendChild(version);

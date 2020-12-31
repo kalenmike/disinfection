@@ -20,8 +20,8 @@
             "alert":true
         }
     ],
-    "virusCount" : 30,
+    "virusCount" : 80,
     "spawnTime" : {"min":400, "max":700},
-    "timeLimit" : 23000,
+    "timeLimit" : 62000,
     "imagePath": "/assets/img/backgrounds/living-desktop.png"
 }

@@ -20,8 +20,8 @@
             "alert":false
         }
     ],
-    "virusCount" : 50,
+    "virusCount" : 85,
     "spawnTime" : {"min":0, "max":500},
-    "timeLimit" : 27000,
+    "timeLimit" : 62000,
     "imagePath": "/assets/img/backgrounds/street-desktop.png"
 }

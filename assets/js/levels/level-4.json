@@ -16,8 +16,8 @@
             "alert":true
         }
     ],
-    "virusCount" : 25,
+    "virusCount" : 75,
     "spawnTime" : {"min":500, "max":800},
-    "timeLimit" : 22000,
+    "timeLimit" : 62000,
     "imagePath": "/assets/img/backgrounds/dining-desktop.png"
 }

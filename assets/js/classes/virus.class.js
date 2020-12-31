@@ -115,6 +115,13 @@
         return [top, left];
     }
 
+    showEntryArrow(id){
+        let elm = document.getElementById(id);
+        let clone = elm.cloneNode(true);
+        elm.parentNode.replaceChild(clone, elm);
+        clone.classList.add('play');
+    }
+
     addToDOM(launchPosition){
 
         var virus = document.createElement('img');
@@ -134,18 +141,22 @@
             //From Top
             virus.style.top = (this.size * -1) + "px";
             virus.style.left = launchPosition[1] + "%";
+            this.showEntryArrow('from-top');
         }else if(launchPosition[0] == 2){
             //Right
             virus.style.left = "calc(100vw + " + this.size + "px)";
             virus.style.top = launchPosition[1] + "%";
+            this.showEntryArrow('from-right');
         }else if(launchPosition[0] == 3){
             //Bottom
             virus.style.top = "calc(100vh + " + this.size + "px)";
             virus.style.left = launchPosition[1] + "%";
+            this.showEntryArrow('from-bottom');
         }else if(launchPosition[0] == 4){
             //From Left
             virus.style.left = (this.size * -1) + "px";
             virus.style.top = launchPosition[1] + "%";
+            this.showEntryArrow('from-left');
         }
 
         document.getElementById('virus-box').appendChild(virus);

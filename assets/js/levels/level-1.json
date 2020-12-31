@@ -8,8 +8,8 @@
             "alert":true
         }
     ],
-    "virusCount" : 10,
+    "virusCount" : 60,
     "spawnTime" : {"min":1000, "max":1000},
-    "timeLimit" : 12000,
+    "timeLimit" : 62000,
     "imagePath": "/assets/img/backgrounds/bedroom-desktop.png"
 }
