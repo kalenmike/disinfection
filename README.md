@@ -15,27 +15,7 @@ Play the game [here](https://www.kalenmichael.com/disinfection/).
 
 ## Todo
 
-- [ ] Game Functions
-   - [x] Start
-   - [x] Game Over
-   - [x] Game Won
-   - [ ] Rules
-
-- [ ] Virus
-   - [x] Spawn
-   - [x] Move
-   - [x] Die
-   - [ ] Attack
-   - [x] Variable Speed
-   - [x] Variable Size
-   - [x] Variable Strength
-
-- [ ] Level
-   - [x] Difficulty
-   - [x] Variable Time Limit
-   - [x] Variable Enemy Limit
-
-- [ ] Lighthouse
-   - [ ] Convert To PWA
-   - [ ] Accesibility Test
-   - [ ] Optimize Performance
+- [ ] Menu
+   - [ ] Game Rules
+   - [ ] About
+   - [ ] Credits
