@@ -1,7 +1,7 @@
 {
-    "name"      : "LEVEL ONE",
-    "text"      : "You have 4 seconds to eliminate the virus",
-    "difficulty" : 1,
+    "name"      : "LEVEL ONE - The Bedroom",
+    "text"      : "The alarm clock sounds and you jump up ready for a new day. The curtains open and through the windows you spot some viruses trying to contaminate your room. Stop them before its too late.",
+    "difficulty" : "🦠",
     "viruses" : [1],
     "virusCount" : 10,
     "spawnTime" : {"min":1000, "max":1000},

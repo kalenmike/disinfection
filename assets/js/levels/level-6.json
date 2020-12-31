@@ -1,7 +1,7 @@
 {
-    "name"      : "LEVEL FIVE",
-    "text"      : "A new virus has entered the scene. Destroy all traces before your time runs out.",
-    "difficulty" : 1,
+    "name"      : "LEVEL FIVE - The Street",
+    "text"      : "Ok! Now its obvious where they are all coming from. But with all your practice this should be an easy fix.",
+    "difficulty" : "🦠 🦠 🦠 🦠 🦠 🦠",
     "viruses" : [1, 2, 3, 4],
     "virusCount" : 50,
     "spawnTime" : {"min":0, "max":500},

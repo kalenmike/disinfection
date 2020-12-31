@@ -1,7 +1,7 @@
 {
-    "name"      : "LEVEL FIVE",
-    "text"      : "A new virus has entered the scene. Destroy all traces before your time runs out.",
-    "difficulty" : 1,
+    "name"      : "LEVEL FIVE - The Living Room",
+    "text"      : "Almost there! Lets disinfect the living room and then we are free to head on out.",
+    "difficulty" : "🦠 🦠 🦠 🦠 🦠",
     "viruses" : [1, 2, 3, 4],
     "virusCount" : 30,
     "spawnTime" : {"min":400, "max":700},

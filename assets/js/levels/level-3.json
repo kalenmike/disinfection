@@ -1,7 +1,7 @@
 {
-    "name"      : "LEVEL THREE",
-    "text"      : "A new virus has entered the scene. Destroy all traces before your time runs out.",
-    "difficulty" : 1,
+    "name"      : "LEVEL THREE - The Kitchen",
+    "text"      : "Breakfast is the meal of champions! Unfortunately the viruses are spreading faster than we can keep up. Save the food!",
+    "difficulty" : "🦠 🦠 🦠",
     "viruses" : [1, 2],
     "virusCount" : 20,
     "spawnTime" : {"min":600, "max":900},

@@ -1,7 +1,7 @@
 {
-    "name"      : "LEVEL FOUR",
-    "text"      : "A new virus has entered the scene. Destroy all traces before your time runs out.",
-    "difficulty" : 1,
+    "name"      : "LEVEL FOUR - The Dinning Room",
+    "text"      : "The dinning table too! Oh no, we gotta get this under control quickly!",
+    "difficulty" : "🦠 🦠 🦠 🦠",
     "viruses" : [1, 2, 3, 4],
     "virusCount" : 25,
     "spawnTime" : {"min":500, "max":800},
