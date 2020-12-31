@@ -3,7 +3,8 @@
     "text"      : "A new virus has entered the scene. Destroy all traces before your time runs out.",
     "difficulty" : 1,
     "viruses" : [1, 2, 3, 4],
-    "virusCount" : 15,
-    "timeLimit" : 30000,
+    "virusCount" : 30,
+    "spawnTime" : {"min":400, "max":700},
+    "timeLimit" : 23000,
     "imagePath": "/assets/img/backgrounds/living-desktop.png"
 }

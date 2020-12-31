@@ -53,7 +53,7 @@ class Level {
             this.spawned++;
             this.living++;
             this.viruses.push(virus);
-            setTimeout(this.spawnViruses.bind(this), 1000);
+            setTimeout(this.spawnViruses.bind(this), this.randomNumberBetween(this.template.spawnTime.min, this.template.spawnTime.max));
         }
     }
 
@@ -105,5 +105,12 @@ class Level {
         );
         const virusData = response.json();
         return virusData;
+    }
+
+    // [DEV] This code is duplicated in level.class and virus.class
+    randomNumberBetween(min, max){
+        // Randomly Generate Number
+        var size = Math.floor(Math.random() * (max - min + 1) + min);
+        return size;
     }
 }

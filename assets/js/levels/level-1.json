@@ -3,7 +3,8 @@
     "text"      : "You have 4 seconds to eliminate the virus",
     "difficulty" : 1,
     "viruses" : [1],
-    "virusCount" : 1,
-    "timeLimit" : 4000,
+    "virusCount" : 10,
+    "spawnTime" : {"min":1000, "max":1000},
+    "timeLimit" : 12000,
     "imagePath": "/assets/img/backgrounds/bedroom-desktop.png"
 }
