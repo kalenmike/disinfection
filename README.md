@@ -29,6 +29,11 @@ The idea behind this project was to create a browser based game using only vanil
    - [x] Variable Strength
 
 - [ ] Level
-   - [ ] Difficulty
+   - [x] Difficulty
    - [x] Variable Time Limit
    - [x] Variable Enemy Limit
+
+- [ ] Lighthouse
+   - [ ] Convert To PWA
+   - [ ] Accesibility Test
+   - [ ] Optimize Performance

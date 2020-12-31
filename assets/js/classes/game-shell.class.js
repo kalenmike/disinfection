@@ -88,6 +88,7 @@ class GameShell {
         startBtn.classList.add("button");
         startBtn.innerText = "Play Disinfection";
         startBtn.addEventListener("click", () => {
+            this.buildGUI();
             this.removeGameMenu();
             this.level = new Level(
                 this.levelData,
@@ -99,7 +100,8 @@ class GameShell {
         this.gameMount.appendChild(this.menu);
 
         // Load the next levels image
-        setTimeout(() => { // [DEV] We can do better than this solution
+        setTimeout(() => {
+            // [DEV] We can do better than this solution
             let backgroundImage = 'url("' + this.levelData.imagePath + '")';
             this.gameMount.style.backgroundImage = backgroundImage;
         }, 1000);
@@ -157,7 +159,8 @@ class GameShell {
 
         let levelInstructions = document.createElement("div");
         levelInstructions.setAttribute("id", "description");
-        levelInstructions.innerText = "So close, but so far. Think you can handle it next time round?";
+        levelInstructions.innerText =
+            "So close, but so far. Think you can handle it next time round?";
         this.menu.appendChild(levelInstructions);
 
         // Start Button
@@ -172,6 +175,29 @@ class GameShell {
         this.menu.appendChild(startBtn);
 
         this.gameMount.appendChild(this.menu);
+    }
+
+    //Build GUI
+    buildGUI() {
+
+        //Beta 1.4.1
+        var version = this.createElementWithId("div", "version");
+        var level = this.createElementWithId("div", "level");
+        var levelName = this.createElementWithId("div", "level-name");
+        var progressBox = this.createElementWithId("div", "progress-box");
+        var progressBar = this.createElementWithId("div", "progress-bar");
+
+        progressBox.appendChild(progressBar);
+        level.appendChild(progressBox);
+        level.appendChild(levelName);
+        this.gameMount.appendChild(version);
+        this.gameMount.appendChild(level);
+    }
+
+    createElementWithId(elementType, id) {
+        var element = document.createElement(elementType);
+        element.setAttribute("id", id);
+        return element;
     }
 
     removeGameMenu() {
