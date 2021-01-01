@@ -189,21 +189,29 @@ body {
 .arrow.left {
   top: 50%;
   left: 0;
+  -webkit-transform: rotate(-45deg) translateY(-50%);
+  -ms-transform: rotate(-45deg) translateY(-50%);
   transform: rotate(-45deg) translateY(-50%);
 }
 .arrow.right {
   top: 50%;
   right: 0;
+  -webkit-transform: rotate(135deg) translateY(-50%);
+  -ms-transform: rotate(135deg) translateY(-50%);
   transform: rotate(135deg) translateY(-50%);
 }
 .arrow.top {
   top: 100px;
   left: 50%;
+  -webkit-transform: rotate(45deg) translateX(-50%);
+  -ms-transform: rotate(45deg) translateX(-50%);
   transform: rotate(45deg) translateX(-50%);
 }
 .arrow.bottom {
   bottom: 0;
   left: 50%;
+  -webkit-transform: rotate(-135deg) translateX(-50%);
+  -ms-transform: rotate(-135deg) translateX(-50%);
   transform: rotate(-135deg) translateX(-50%);
 }
 .arrow.play {
