@@ -12,6 +12,7 @@ Play the game [here](https://www.kalenmichael.com/disinfection/).
 * Sass
 * Javascript ECMA 6
 * Babel
+* Webpack
 
 ## Todo
 
