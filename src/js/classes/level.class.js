@@ -22,6 +22,9 @@ export default class Level {
         this.currentTime = this.template.timeLimit;
         this.cleanCount = cleanCount;
 
+        this.pause = false;
+        document.getElementById('pause-button').addEventListener('click', this.pauseGame.bind(this));
+
         this.maxAlive = 10;
 
         this.backgroundAudio = new Audio('./assets/sounds/POL-foggy-forest-short.wav');
@@ -47,9 +50,25 @@ export default class Level {
         // }, this.template.timeLimit);
     }
 
+    pauseGame(){
+        if (this.pause){
+            this.pause = false;
+            this.spawnViruses();
+            this.viruses.forEach((virus) => {
+                virus.unfreeze();
+            });
+        }else{
+            this.pause = true;
+            this.viruses.forEach((virus) => {
+                virus.freeze();
+            });
+        }
+    }
+
     startLevelTimer(){
         const progressBar = document.getElementById('progress-bar');
         this.timeLimit = setInterval(() =>{
+            if (this.pause) return; // Skip timer if game is paused
             if (this.currentTime <= 0){
                 progressBar.style.width = "0";
                 this.submitOutcome(false);
@@ -64,6 +83,7 @@ export default class Level {
      * Spawn virus at interval until the level limit has been reached
      */
     spawnViruses(){
+        if (this.pause) return
         if (this.spawned < this.template.virusCount && this.active){
             let random = Math.floor(
                 Math.random() * this.virusTypes.length

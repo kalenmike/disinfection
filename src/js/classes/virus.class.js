@@ -42,6 +42,12 @@
         this.virusElem.classList.add('stop-animation');
     }
 
+    unfreeze(){
+        this.living = true;
+        this.virusElem.classList.remove('stop-animation');
+        this.move();
+    }
+
     attack(){
 
     }

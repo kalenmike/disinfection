@@ -168,8 +168,8 @@ export default class GameShell {
                 this.levelData,
                 this.cleanCount,
                 this.levelCallback.bind(this)
-            );
-        });
+                );
+            });
         this.menu.appendChild(startBtn);
 
         this.gameMount.appendChild(this.menu);
@@ -305,7 +305,6 @@ export default class GameShell {
         this.virusBox.appendChild(fromLeft);
 
         this.virusBox.appendChild(level);
-        // this.gameMount.appendChild(version ' +
         let healthCounterInner =
         '<svg ' +
         'xmlns:dc="http://purl.org/dc/elements/1.1/" ' +
@@ -370,6 +369,10 @@ export default class GameShell {
         let cleanCount = this.createElementWithId("div", "");
         cleanCount.innerHTML = cleanCountInner;
         this.virusBox.appendChild(cleanCount);
+
+        let pauseButton = this.createElementWithId("button", "pause-button");
+        pauseButton.innerText = 'PAUSE'
+        this.virusBox.appendChild(pauseButton);
     }
 
     createElementWithId(elementType, id) {
