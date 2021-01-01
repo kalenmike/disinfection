@@ -149,6 +149,7 @@ export default class Level {
     submitOutcome(status) {
         if (this.active) {
             this.active = false;
+            this.backgroundAudio.pause();
             clearInterval(this.timeLimit);
             // Kill all living viruses
             this.viruses.forEach((virus) => {
