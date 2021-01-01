@@ -331,6 +331,12 @@ body {
   -o-user-select: none;
   user-select: none;
 }
+.virus.clicked {
+  transition: 0.5s;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
 
 .virus:hover {
   cursor: url("../cursors/crosshair.svg"), crosshair;

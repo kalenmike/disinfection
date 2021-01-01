@@ -58,7 +58,8 @@ export default class Page{
         '<h1>Attributions</h1>' +
         '<h2>Illustrations</h2>' +
         '<a href="https://www.freepik.es/vectorpouch">Background Images Created by vectorpouch</a>' +
-        'Sound Recorded by Mike Koenig';
+        'Sound Recorded by Mike Koenig Attibution 3'+
+        'Music: “Foggy Forest”, from PlayOnLoop.com Attribution 4.0';
 
         return frame;
     }

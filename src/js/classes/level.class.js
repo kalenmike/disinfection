@@ -24,6 +24,11 @@ export default class Level {
 
         this.maxAlive = 10;
 
+        this.backgroundAudio = new Audio('./assets/sounds/POL-foggy-forest-short.wav');
+        this.backgroundAudio.volume = 0.5;
+        this.backgroundAudio.loop = true;
+        this.backgroundAudio.play();
+
         this.decrementPercent = (1000 / this.template.timeLimit) / 10; // For updating the progress bar, 1 second / timeLimit
 
         this.loadAllVirusData().then(() => this.start());

@@ -40,7 +40,6 @@
     freeze(){
         this.living = false;
         this.virusElem.classList.add('stop-animation');
-        this.virusElem.removeEventListener('click', this.die.bind(this));
     }
 
     attack(){

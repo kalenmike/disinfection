@@ -6,6 +6,11 @@
     -webkit-user-select: none;
     -o-user-select: none;
     user-select: none;
+
+    &.clicked{
+        transition: 0.5s;
+        @include transform(scale(0.9));
+    }
   }
 
 .virus:hover{
