@@ -12,6 +12,9 @@
         this.callback = callback;
         this.size = this.randomNumberBetween(this.template.size.min, this.template.size.max);
 
+        this.squishAudio = new Audio('assets/sounds/squish.wav');
+        this.squishAudio.volume = 0.1;
+
         this.live();
     }
 
@@ -24,6 +27,7 @@
 
     die(){
         this.living = false;
+        this.squishAudio.play();
         this.virusElem.parentNode.removeChild(this.virusElem);
         this.callback();
     }

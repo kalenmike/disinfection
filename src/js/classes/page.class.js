@@ -57,9 +57,8 @@ export default class Page{
         '<p>...I am still working on adding the credits...</p>' +
         '<h1>Attributions</h1>' +
         '<h2>Illustrations</h2>' +
-        '<a href="https://www.freepik.es/vectorpouch">Background Images Created by vectorpouch</a>';
-
-        
+        '<a href="https://www.freepik.es/vectorpouch">Background Images Created by vectorpouch</a>' +
+        'Sound Recorded by Mike Koenig';
 
         return frame;
     }
