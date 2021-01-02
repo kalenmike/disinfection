@@ -45,7 +45,7 @@ export default class Page{
         let frame = document.createElement('div');
         frame.innerHTML = 
         '<div class="scroll-content"><h1>Game Rules</h1>' +
-        '<p>Each level will spawn a set amount of viruses and you will be allocated a time limit to clean them. If you allow too many viruses to be alive at the same time the infection will become to dangerous and you will lose a life. The test tube will indicate the level of infection in the current room, the more green the more dangerous.</p>' + 
+        '<p>Each level will spawn of viruses and you will be allocated a time limit to clean them all. If you allow too many viruses to be alive at the same time the infection will become dangerous and a life will be lost. The test tube will indicate the level of infection in the current room, the more green the more dangerous.</p>' + 
         '<h2>Summary</h2>'+
         '<p><ul>' +
         '<li>Clean all the viruses by clicked or tapping them before the time limit expires</li>' + 
