@@ -142,17 +142,17 @@ export default class GameShell {
 
     updatePlayerLivesGUI() {
         if (this.playerLives == 1) {
-            document.getElementById("life-one").style.opacity = "1";
-            document.getElementById("life-two").style.filter = "contrast(0)";
-            document.getElementById("life-three").style.filter = "contrast(0)";
+            document.getElementById("life-one").classList.remove('lost');
+            document.getElementById("life-two").classList.add('lost');
+            document.getElementById("life-three").classList.add('lost');
         } else if (this.playerLives == 2) {
-            document.getElementById("life-one").style.opacity = "1";
-            document.getElementById("life-two").style.opacity = "1";
-            document.getElementById("life-three").style.filter = "contrast(0)";
+            document.getElementById("life-one").classList.remove('lost');
+            document.getElementById("life-two").classList.remove('lost');
+            document.getElementById("life-three").classList.add('lost');
         } else if (this.playerLives == 3) {
-            document.getElementById("life-one").style.opacity = "1";
-            document.getElementById("life-two").style.opacity = "1";
-            document.getElementById("life-three").style.opacity = "1";
+            document.getElementById("life-one").classList.remove('lost');
+            document.getElementById("life-two").classList.remove('lost');
+            document.getElementById("life-three").classList.remove('lost');
         }
     }
 
@@ -277,11 +277,11 @@ export default class GameShell {
         // Start Button
         let startBtn = document.createElement("button");
         startBtn.classList.add("button");
-        startBtn.innerText = "Start Over";
+        startBtn.innerText = "Main Menu";
         startBtn.addEventListener("click", () => {
             this.removeGameMenu();
             this.initGameData();
-            this.play();
+            this.showMainMenu();
         });
         this.menu.appendChild(startBtn);
 
