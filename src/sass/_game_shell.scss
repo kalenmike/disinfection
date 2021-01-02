@@ -290,6 +290,8 @@
 
     color: #6ebfe2;
     background-color: rgba(255, 255, 255, 0.7);
+    background-image: url("#{$assets-folder}/img/icons/bubble.svg");
+    background-size:contain;
     border-radius: 50%;
     padding: 1em;
     margin: 1em;
