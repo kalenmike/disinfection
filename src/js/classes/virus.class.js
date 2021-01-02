@@ -182,19 +182,22 @@
         }
 
         virus.addEventListener('click', this.die.bind(this));
+        // virus.addEventListener('dragstart', this.die.bind(this));
 
         // [DEV] CHEATS
         // virus.addEventListener('mouseover', this.die.bind(this));
 
-        // Hide Ghost image
-        document.addEventListener("dragstart", function( event ) {
-            var img = new Image();
-            img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
-            // img.src = "http://placehold.it/1/000000/ffffff";
-            img.style.display = "none";
-            img.style.visibility = "hidden";
-            img.style.opacity = "0";
-            event.dataTransfer.setDragImage(img, window.outerWidth, window.outerHeight);
+        //Hide Ghost image [DEV]
+        virus.addEventListener("dragstart", ( e ) =>{
+            e.preventDefault();
+            this.die();
+            // var img = new Image();
+            // img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
+            // // img.src = "http://placehold.it/1/000000/ffffff";
+            // img.style.display = "none";
+            // img.style.visibility = "hidden";
+            // img.style.opacity = "0";
+            // event.dataTransfer.setDragImage(img, window.outerWidth, window.outerHeight);
         }, false);
 
         this.virusElem = virus;

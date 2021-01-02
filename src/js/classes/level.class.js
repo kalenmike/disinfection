@@ -59,14 +59,14 @@ export default class Level {
     pauseGame(){
         if (this.pause){
             this.pause = false;
-            this.backgroundAudio.play();
+            // this.backgroundAudio.play();
             this.spawnViruses();
             this.viruses.forEach((virus) => {
                 virus.unfreeze();
             });
         }else{
             this.pause = true;
-            this.backgroundAudio.pause();
+            // this.backgroundAudio.pause();
             this.viruses.forEach((virus) => {
                 virus.freeze();
             });
