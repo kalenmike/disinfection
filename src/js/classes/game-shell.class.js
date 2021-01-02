@@ -21,13 +21,16 @@ export default class GameShell {
      * Runs on construction and game over
      */
     initGameData() {
-        this.levelNum = 6; // Initiate at level 1
+        this.levelNum = 1; // Initiate at level 1
         this.cleanCount = 0;
         this.playerLives = 3; // Init Player Lives
     }
 
     levelCallback(response) {
-        if (response.win == true) {
+        if (response.win == 'quit'){
+            this.initGameData();
+            this.showMainMenu();
+        }else if (response.win == true) {
             this.levelNum++;
             this.cleanCount = response.cleanCount;
             this.play();

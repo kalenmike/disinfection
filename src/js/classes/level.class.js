@@ -155,6 +155,13 @@ export default class Level {
     }
 
     /**
+     * Quit the level and return to main menu
+     */
+    quit(){
+        this.submitOutcome('quit');
+    }
+
+    /**
      * Submit the results to the game shell
      */
     submitOutcome(status) {

@@ -101,6 +101,20 @@ export default class Page{
         '<label><input type="checkbox" checked/> Play Action Sounds</label>' +
         '<label><input type="range" value="50"/> Volume</label></div>'
 
+        // Add option to return to main menu in pause/settings menu
+        if (this.level){
+            let mainMenuBtn = document.createElement('button');
+            mainMenuBtn.classList.add('button');
+            mainMenuBtn.innerText = "Quit to Main Menu";
+            mainMenuBtn.addEventListener('click', ()=>{
+                this.level.quit();
+                this.container.parentNode.removeChild(this.container);
+            });
+    
+            frame.appendChild(mainMenuBtn);
+        }
+        
+
         return frame;
     }
 }
