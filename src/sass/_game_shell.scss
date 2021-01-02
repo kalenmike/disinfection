@@ -349,8 +349,12 @@
         }
     }
 
-    h1{
+    h1, h2{
         font-familY:$primaryFont;
+    }
+
+    ul{
+        font-family: $secondaryFont;
     }
 
     p{

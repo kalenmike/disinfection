@@ -44,12 +44,15 @@ export default class Page{
     buildRules(){
         let frame = document.createElement('div');
         frame.innerHTML = 
-        '<p>...I am still working on adding the rules...</p>' +
-        '<h1>Game Rules</h1>' +
-        '<ul>' +
-        '<li>Clean all the viruses before your time runs out</li>' + 
-        '<li>Ensure the room does not become too dirty</li>' +
-        '</ul>';
+        '<div class="scroll-content"><h1>Game Rules</h1>' +
+        '<p>Each level will spawn a set amount of viruses and you will be allocated a time limit to clean them. If you allow too many viruses to be alive at the same time the infection will become to dangerous and you will lose a life. The test tube will indicate the level of infection in the current room, the more green the more dangerous.</p>' + 
+        '<h2>Summary</h2>'+
+        '<p><ul>' +
+        '<li>Clean all the viruses by clicked or tapping them before the time limit expires</li>' + 
+        '<li>Ensure that your test tube does not become fully green by keeping the total number of viruses on your screen low</li>' +
+        '</ul></p>'+
+        '<p>As you progress through the levels the viruses will become stronger and produce faster.</p>'+
+        '</div>';
 
         return frame;
     }
@@ -72,12 +75,15 @@ export default class Page{
         frame.innerText = "Credits Page";
 
         frame.innerHTML = 
-        '<p>...I am still working on adding the credits...</p>' +
         '<h1>Attributions</h1>' +
         '<h2>Illustrations</h2>' +
-        '<a href="https://www.freepik.es/vectorpouch">Background Images Created by vectorpouch</a>' +
-        'Sound Recorded by Mike Koenig Attibution 3'+
-        'Music: “Foggy Forest”, from PlayOnLoop.com Attribution 4.0';
+        '<p><a href="https://www.freepik.es/vectorpouch">Level Background Images - vectorpouch</a></p>' +
+        '<h2>Audio</h2>' + 
+        '<p>Virus Sounds: - Mike Koenig (Attibution 3.0)</p>'+
+        '<p>Level Music: “Foggy Forest” - PlayOnLoop.com (Attribution 4.0)</p>' +
+        '<h2>Design</h2>' + 
+        '<p>Kalen Michael</p>'+
+        '<p>Alan Dimmer</p>';
 
         return frame;
     }
@@ -87,7 +93,7 @@ export default class Page{
         frame.innerText = "Settings Page";
 
         frame.innerHTML = 
-        '<div class="settings-page"><p>...I am still working on adding the settings...</p>' +
+        '<div class="settings-page"><p>...I am still working on adding the settings they do nothing...</p>' +
         '<h1>Settings</h1>' +
         '<h2>Audio</h2>' +
         '<label><input type="checkbox" checked onclick="toggleAudio()"/> Enable Audio</label>' +
