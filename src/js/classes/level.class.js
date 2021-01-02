@@ -124,6 +124,7 @@ export default class Level {
         '   <tr class="text-center"><td colspan="3"><h3 class="name">'+ virusTemplate.name +' Identified!</h3></td></tr>' +
         '   <tr><td>Size</td><td> : </td><td class="size">'+ virusTemplate.size.min + 'nm - ' + virusTemplate.size.max +'nm</td></tr>' +
         '   <tr><td>Speed</td><td> : </td><td class="speed">'+virusTemplate.speed.min + 'ns - ' + virusTemplate.speed.max +'ns</td></tr>' +
+        '   <tr><td colspan="3" style="text-align:center;max-width:300px; padding-top:0.4em;">'+ virusTemplate.details +'</td></tr>' +
         '</table'
 
         preview.src = virusTemplate.imagePath;

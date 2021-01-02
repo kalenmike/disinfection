@@ -4,5 +4,6 @@
     "size"      : {"min":50, "max":120},
     "speed"     : {"min":10, "max":15},
     "imagePath" : "./assets/img/viruses/virus-1.svg",
-    "class"     : "agualess"
+    "class"     : "agualess",
+    "details"   : "Spreads via water molecules"
 }
