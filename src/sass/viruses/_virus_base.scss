@@ -8,8 +8,8 @@
     user-select: none;
 
     &.clicked{
-        transition: 0.5s;
-        @include transform(scale(0.9));
+        transition: 1s;
+        animation: shrink-fade 1s forwards;
     }
   }
 
@@ -25,4 +25,14 @@
 
 .stop-animation{
     animation:none;
+}
+
+@keyframes shrink-fade{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(0);
+        opacity:0;
+    }
 }

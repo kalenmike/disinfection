@@ -11,6 +11,9 @@ export default class GameShell {
         this.gameMount = document.getElementById(elemID);
         this.initGameData();
 
+        // Init Player Lives
+        this.playerLives = 3;
+
         this.showMainMenu();
     }
 
@@ -25,7 +28,12 @@ export default class GameShell {
             this.cleanCount = response.cleanCount;
             this.play();
         } else {
-            this.showGameOverMenu();
+            this.playerLives--;
+            if (this.playerLives > 0){
+                this.play();
+            }else{
+                this.showGameOverMenu();
+            }
         }
     }
 
@@ -381,6 +389,10 @@ export default class GameShell {
         let settingsBtn = this.createElementWithId("img", "pause-button");
         settingsBtn.src = './assets/img/icons/settings.svg';
         this.virusBox.appendChild(settingsBtn);
+
+        let lives = this.createElementWithId("div", "player-lives");
+        lives.innerText = this.playerLives;
+        this.virusBox.appendChild(lives);
     }
 
     createElementWithId(elementType, id) {

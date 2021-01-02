@@ -30,7 +30,13 @@
     die(){
         this.living = false;
         this.playSound();
-        this.virusElem.parentNode.removeChild(this.virusElem);
+        this.virusElem.src = "./assets/img/art/pop.png"
+        this.virusElem.classList.add('clicked');
+        setTimeout(()=>
+        {
+            this.virusElem.parentNode.removeChild(this.virusElem)
+        },200);
+        // this.virusElem.parentNode.removeChild(this.virusElem);
         this.callback();
     }
 
