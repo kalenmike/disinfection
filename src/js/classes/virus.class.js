@@ -1,7 +1,7 @@
  export default class Virus{
 
     virusElem; // Holds the img tag
-    living;
+    isAlive;
 
      /**
      * @param {object} virusData An object containing all the virus data
@@ -10,6 +10,7 @@
     constructor(virusData, callback){
         this.template = virusData;
         this.callback = callback;
+
         this.size = this.randomNumberBetween(this.template.size.min, this.template.size.max);
 
         if (window.gameSettings.audio.enabled && window.gameSettings.audio.sounds){
@@ -21,23 +22,25 @@
     }
 
     live(){
-        this.living = true;
+        this.isAlive = true;
         let launchPosition = this.generateStartPosition();
         this.addToDOM(launchPosition);
         this.move();
     }
 
     die(){
-        this.living = false;
+        // Check if already dead
+        if(this.isAlive == false){
+            return;
+        }
+        this.isAlive = false;
         this.playSound();
         this.virusElem.src = "./assets/img/art/pop.png"
         this.virusElem.classList.add('clicked');
-        setTimeout(()=>
-        {
-            this.virusElem.parentNode.removeChild(this.virusElem)
+        setTimeout(() =>{
+            this.virusElem.parentNode.removeChild(this.virusElem);
+            this.callback();
         },200);
-        // this.virusElem.parentNode.removeChild(this.virusElem);
-        this.callback();
     }
 
     move(){
@@ -46,12 +49,12 @@
     }
 
     freeze(){
-        this.living = false;
+        this.isAlive = false;
         this.virusElem.classList.add('stop-animation');
     }
 
     unfreeze(){
-        this.living = true;
+        this.isAlive = true;
         this.virusElem.classList.remove('stop-animation');
         this.move();
     }
@@ -83,7 +86,7 @@
         let leftChange = (left > newLeft) ? -1 : 1;
         function frame() {
 
-            if (this.living == false){
+            if (this.isAlive == false){
                 clearInterval(id); // End loop if virus has died
                 return;
             }
@@ -144,6 +147,7 @@
         // virus.setAttribute("id", this.identifier);
         virus.setAttribute("src", this.template.imagePath);
         virus.setAttribute("draggable", 'false');
+
         //Set Classes
         virus.classList.add("virus");
         virus.classList.add(this.template.class);
@@ -176,6 +180,9 @@
 
         document.getElementById('virus-box').appendChild(virus);
         virus.addEventListener('click', this.die.bind(this));
+
+        // [DEV] CHEATS
+        virus.addEventListener('mouseover', this.die.bind(this));
 
         // Hide Ghost image
         document.addEventListener("dragstart", function( event ) {

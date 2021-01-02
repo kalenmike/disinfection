@@ -134,6 +134,7 @@ export default class Level {
     }
 
     virusDeath() {
+        console.log('Virus Death Received In Level');
         // Prevent score from increasing if cheating
         if(this.pause){
             this.spawned--; // Decrease the spawned count to make up for the cheat
@@ -208,26 +209,34 @@ export default class Level {
         if(percentage < 12.5){
             document.getElementById("tube-eight").style.opacity = "1";
             document.getElementById("tube-one").style.opacity = "1";
+            document.getElementById('virus-box').classList.remove('dangerous');
         }else if (percentage < 25){
             document.getElementById("tube-one").style.opacity = "";
             document.getElementById("tube-two").style.opacity = "1";
+            document.getElementById('virus-box').classList.remove('dangerous');
         }else if (percentage < 37.5){
             document.getElementById("tube-two").style.opacity = "";
             document.getElementById("tube-three").style.opacity = "1";
+            document.getElementById('virus-box').classList.remove('dangerous');
         }else if (percentage < 50){
             document.getElementById("tube-three").style.opacity = "";
             document.getElementById("tube-four").style.opacity = "1";
+            document.getElementById('virus-box').classList.remove('dangerous');
         }else if (percentage < 62.5){
             document.getElementById("tube-four").style.opacity = "";
             document.getElementById("tube-five").style.opacity = "1";
+            document.getElementById('virus-box').classList.remove('dangerous');
         }else if (percentage < 75){
             document.getElementById("tube-five").style.opacity = "";
             document.getElementById("tube-six").style.opacity = "1";
+            document.getElementById('virus-box').classList.remove('dangerous');
         }else if (percentage < 87.5){
             document.getElementById("tube-six").style.opacity = "";
             document.getElementById("tube-seven").style.opacity = "1";
+            document.getElementById('virus-box').classList.add('dangerous');
         }else if (percentage > 87.5 && percentage < 100){
             document.getElementById("tube-seven").style.opacity = "";
+            document.getElementById('virus-box').classList.add('dangerous');
         }else if (percentage >= 100){
             this.submitOutcome(false);
         }
