@@ -9,6 +9,10 @@ export default class Level {
      * @param {function} callback The callback to fire when the level finishes
      */
     constructor(levelData, cleanCount, callback) {
+
+        // Stop Menu Music
+        window.menuMusic.pause();
+
         this.template = levelData;
         this.callback = callback;
 

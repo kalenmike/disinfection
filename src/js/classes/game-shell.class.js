@@ -150,6 +150,8 @@ export default class GameShell {
         
 
         this.gameMount.appendChild(this.menu);
+
+        window.menuMusic.play();
     }
 
     spawnDemoVirus(){
@@ -287,6 +289,8 @@ export default class GameShell {
         this.menu.appendChild(startBtn);
 
         this.gameMount.appendChild(this.menu);
+
+        window.menuMusic.play();
     }
 
     showGameOverMenu() {
