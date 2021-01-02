@@ -36,6 +36,16 @@
     }
 }
 
+#player-lives{
+    position:fixed;
+    bottom:0;
+    right:100px;
+    img{
+        width:30px;
+        margin:1em;
+    }
+}
+
 #pause-button{
     position:fixed;
     top:0;
