@@ -142,6 +142,11 @@ export default class GameShell {
         // for(let i = 0; i < 10; i++){
         //     this.spawnDemoVirus();
         // }
+
+        let kmLogo = document.createElement('img');
+        kmLogo.src = './assets/img/kalen-michael-logo.svg'
+        kmLogo.style.width = "100px";
+        this.menu.appendChild(kmLogo);
         
 
         this.gameMount.appendChild(this.menu);

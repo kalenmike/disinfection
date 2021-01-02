@@ -62,6 +62,9 @@
 #menu {
     background-color: $primaryColor;
     background: radial-gradient(lighten($primaryColor, 30%), lighten($primaryColor, 25%), lighten($primaryColor, 20%), lighten($primaryColor, 10%), $primaryColor, darken($primaryColor, 5%));
+    background-image: url("#{$assets-folder}/img/backgrounds/main-menu.jpg");
+    background-position: center center;
+    background-size:cover;
     color: #fff;
     display: flex;
     align-items: center;
