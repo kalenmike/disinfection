@@ -327,9 +327,26 @@
         background-color: #fff;
         width:70%;
         height:70%;
-        padding: 1em;
+        padding: 5em 3em;
         border-radius:10px;
         z-index: 205; // To place above viruses
+        overflow: hidden;
+    }
+
+    .scroll-content{
+        overflow-y:auto;
+        max-height: 100%;
+        height:100%;
+    }
+
+    h1{
+        font-familY:$primaryFont;
+    }
+
+    p{
+        + p {
+            margin-top:1em;
+        }
     }
 }
 
