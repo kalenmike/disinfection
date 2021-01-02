@@ -316,27 +316,37 @@
         padding: 0.2em;
         font-size: 2em;
         cursor: pointer;
+        transition:0.3s;
+        z-index: 205;
 
         &:hover{
-            color:$primaryColor;
+            transform: scale(1.1);
         }
     }
 
     .inner-content{
         position:relative;
-        background-color: #fff;
+        background-color: $primaryColor;
+        color:#fff;
         width:70%;
         height:70%;
         padding: 5em 3em;
         border-radius:10px;
-        z-index: 205; // To place above viruses
         overflow: hidden;
     }
 
     .scroll-content{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left:0;
+        bottom: 0;
+        padding: 5em 3em;
         overflow-y:auto;
-        max-height: 100%;
-        height:100%;
+
+        p:last-child{
+            margin-bottom:5em; // Fix for scrollbox bottom padding
+        }
     }
 
     h1{
@@ -344,6 +354,7 @@
     }
 
     p{
+        font-family: $secondaryFont;
         + p {
             margin-top:1em;
         }

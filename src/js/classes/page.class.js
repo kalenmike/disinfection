@@ -57,11 +57,11 @@ export default class Page{
     buildAbout(){
         let frame = document.createElement('div');
         frame.innerHTML =
-        '<h1>About</h1>' +
-        '<div class="scroll-content"><p>2020 the year so special they had to name it twice!</p>' + 
-        '<p>As we all sat locked in our houses, quaranteened and fearing for our futures we found ourselves with alot of extra time and very little to do.</p>' + 
+        '<div class="scroll-content"><h1>About</h1>' +
+        '<p style="font-weight:bold">2020 the year so special they had to name it twice!</p>' + 
+        '<p>As we all sat locked in our houses, quarantined and fearing for our futures we found ourselves with alot of extra time and very little to do.</p>' + 
         '<p>I had recently moved to a new town and was living alone far away from friends and family. This game became my project. It changed many times over starting as a horror game and eventually becoming something more child friendly after I realised my nephews might enjoy playing it on their tablet.</p>' + 
-        'Unfortunately my original code was almost entirely lost as I only published my compliled code to my server. The realise of Ubunut 20.04 had me excited and I reformatted before realising I had not saved my local web projects. So what you see today is a reimagined version of what once was, and a tribute to all the time we spent indoors during the quarantine of 2020.' + 
+        '<p>Unfortunately my original code was almost entirely lost as I only published the compliled code. The release of <a href="http://www.releases.ubuntu.com/20.04/">Ubunutu 20.04</a> had me excited and I reformatted before realising I had not saved my local web projects. So what you see today is a reimagined version of what once was, and a tribute to all the time we spent indoors during the quarantine of 2020.</p>' + 
         '<p>I hope you enjoy playing my game!</p></div>';
 
         return frame;
