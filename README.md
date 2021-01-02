@@ -30,3 +30,16 @@ Play the game [here](https://www.kalenmichael.com/disinfection/).
 * Increase the power of the players weapon
 * Add unique weaknesses to viruses
 * Show virus health bar under virus (or by color, brighter - health, grey - weak)
+
+## Changelog
+
+1.1.0
+* Added Music
+* Added Pause Menu
+* Fix drag bug
+* Changed Menu Design
+* Added details to viruses
+* Added comic art on virus destroy
+
+1.0.0
+Initial Version

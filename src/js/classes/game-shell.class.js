@@ -109,7 +109,7 @@ export default class GameShell {
 
         let p = document.createElement("p");
         p.classList.add("version");
-        p.innerText = "Version 1.0.0";
+        p.innerText = "Version 1.1.0";
 
         let ul = document.createElement("ul");
 
