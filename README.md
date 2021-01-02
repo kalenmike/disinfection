@@ -20,3 +20,13 @@ Play the game [here](https://www.kalenmichael.com/disinfection/).
    - [ ] Game Rules
    - [ ] About
    - [ ] Credits
+
+## Ideas
+
+* Add filter to slow the growth of viruses
+* Make viruses duplicate at certain age
+* Add player lives to repeat the last level
+* Spawn power ups (extra time, extra lives)
+* Increase the power of the players weapon
+* Add unique weaknesses to viruses
+* Show virus health bar under virus (or by color, brighter - health, grey - weak)

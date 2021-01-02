@@ -10,4 +10,13 @@
 
 import GameShell from './classes/game-shell.class.js';
 
+window.gameSettings = {
+    'audio':{
+        'enabled':true,
+        'background':true,
+        'sounds':true,
+        'volume':0.5
+    }
+}
+
 let game = new GameShell('disinfection');

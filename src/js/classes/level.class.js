@@ -27,10 +27,12 @@ export default class Level {
 
         this.maxAlive = 10;
 
-        this.backgroundAudio = new Audio('./assets/sounds/POL-foggy-forest-short.wav');
-        this.backgroundAudio.volume = 0.5;
-        this.backgroundAudio.loop = true;
-        this.backgroundAudio.play();
+        if (window.gameSettings.audio.enabled && window.gameSettings.audio.background){
+            this.backgroundAudio = new Audio('./assets/sounds/POL-foggy-forest-short.wav');
+            this.backgroundAudio.volume = window.gameSettings.audio.volume;
+            this.backgroundAudio.loop = true;
+            this.backgroundAudio.play();
+        };
 
         this.decrementPercent = (1000 / this.template.timeLimit) / 10; // For updating the progress bar, 1 second / timeLimit
 

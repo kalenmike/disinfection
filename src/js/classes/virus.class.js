@@ -12,8 +12,10 @@
         this.callback = callback;
         this.size = this.randomNumberBetween(this.template.size.min, this.template.size.max);
 
-        this.squishAudio = new Audio('assets/sounds/squish.wav');
-        this.squishAudio.volume = 0.1;
+        if (window.gameSettings.audio.enabled && window.gameSettings.audio.sounds){
+            this.squishAudio = new Audio('assets/sounds/squish.wav');
+            this.squishAudio.volume = 0.1;
+        };
 
         this.live();
     }
@@ -27,7 +29,7 @@
 
     die(){
         this.living = false;
-        this.squishAudio.play();
+        this.playSound();
         this.virusElem.parentNode.removeChild(this.virusElem);
         this.callback();
     }
@@ -46,6 +48,12 @@
         this.living = true;
         this.virusElem.classList.remove('stop-animation');
         this.move();
+    }
+
+    playSound(){
+        if (window.gameSettings.audio.enabled && window.gameSettings.audio.sounds){
+            this.squishAudio.play();
+        }
     }
 
     attack(){

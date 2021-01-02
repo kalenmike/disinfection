@@ -79,13 +79,13 @@ export default class Page{
         frame.innerText = "Settings Page";
 
         frame.innerHTML = 
-        '<p>...I am still working on adding the settings...</p>' +
+        '<div class="settings-page"><p>...I am still working on adding the settings...</p>' +
         '<h1>Settings</h1>' +
         '<h2>Audio</h2>' +
-        '<label><input type="checkbox" /> Enable Audio</label>' +
-        '<label><input type="checkbox" /> Play Background Music</label>' +
-        '<label><input type="checkbox" /> Play Action Sounds</label>' +
-        '<label><input type="range" /> Volume</label>'
+        '<label><input type="checkbox" checked onclick="toggleAudio()"/> Enable Audio</label>' +
+        '<label><input type="checkbox" checked/> Play Background Music</label>' +
+        '<label><input type="checkbox" checked/> Play Action Sounds</label>' +
+        '<label><input type="range" value="50"/> Volume</label></div>'
 
         return frame;
     }

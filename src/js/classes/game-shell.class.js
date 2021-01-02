@@ -404,4 +404,13 @@ export default class GameShell {
             return false;
         }
     }
+
+    toggleAudio(e){
+        console.log('toggling audio');
+        if (e.target.checked){
+            window.gameSettings.audio.enabled = true;
+        }else{
+            window.gameSettings.audio.enabled = false;
+        }
+    }
 }
