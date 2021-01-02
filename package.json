@@ -6,8 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel": "./node_modules/.bin/babel src/js/main.js --out-file dist/game.js",
-    "dev": "NODE_ENV=development ./node_modules/.bin/webpack",
-    "prod": "NODE_ENV=production ./node_modules/.bin/webpack"
+    "dev": "NODE_ENV=development ./node_modules/.bin/webpack && sass src/sass/style.scss assets/css/style.css --style=compressed",
+    "prod": "NODE_ENV=production ./node_modules/.bin/webpack",
+    "watch":"NODE_ENV=development ./node_modules/.bin/webpack --watch",
+    "sass": "sass src/sass/style.scss assets/css/style.css --style=compressed"
   },
   "repository": {
     "type": "git",

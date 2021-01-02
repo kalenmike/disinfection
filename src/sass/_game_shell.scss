@@ -1,28 +1,42 @@
 .main-menu {
-    list-style: none;
-    margin-top: 2em;
+    opacity:1;
+    animation:none;
+    
+    ul {
+        list-style: none;
+        margin-top: 2em;
 
-    li{
-        cursor: pointer;
+        li {
+            cursor: pointer;
+        }
+
+        li + li {
+            margin-top: 1em;
+        }
+
+        li:hover::before {
+            content: ">";
+            margin-right: 1em;
+        }
+
+        li:hover::after {
+            content: "<";
+            margin-left: 1em;
+        }
     }
 
-    li + li {
-        margin-top: 1em;
-    }
-
-    li:hover::before {
-        content: ">";
-        margin-right: 1em;
-    }
-
-    li:hover::after {
-        content: "<";
-        margin-left: 1em;
+    .version {
+        font-size: 0.8em;
     }
 }
 
-.version {
-    font-size: 0.8em;
+#pause-button{
+    position:fixed;
+    top:0;
+    right: 0;
+    width:50px;
+    margin:1em;
+    cursor:pointer;
 }
 
 #menu {
@@ -226,61 +240,61 @@
     transition: opacity 5s;
 }
 
-#clean-stats{
-    position:fixed;
-    top:0;
-    left:0;
-    display:flex;
+#clean-stats {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width:120px;
-    height:120px;
+    width: 120px;
+    height: 120px;
 
-    color:#6ebfe2;
-    background-color:rgba(255,255,255,0.7);
+    color: #6ebfe2;
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
-    padding:1em;
-    margin:1em;
+    padding: 1em;
+    margin: 1em;
 
-    #clean-count{
-        font-size:1.5em;
+    #clean-count {
+        font-size: 1.5em;
         font-weight: bold;
         font-family: $secondaryFont;
     }
 
-    .text{
-        font-family:$primaryFont;
+    .text {
+        font-family: $primaryFont;
         text-transform: uppercase;
     }
 }
 
-.page-overlay{
+.page-overlay {
     position: fixed;
-    top:50%;
-    left:50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    background-color:#fff;
-    width:95vw;
-    height:95vh;
+    background-color: #fff;
+    width: 95vw;
+    height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index:201;
+    z-index: 201;
     cursor: auto; // Overwrite the game cursor
-    padding:1em;
+    padding: 1em;
 
-    *{
-        text-align:center;
+    * {
+        text-align: center;
     }
 
-    .close-overlay{
-        position:fixed;
-        right:10px;
+    .close-overlay {
+        position: fixed;
+        right: 10px;
         top: 10px;
-        padding:0.2em;
-        font-size:2em;
-        cursor: pointer; 
+        padding: 0.2em;
+        font-size: 2em;
+        cursor: pointer;
     }
 }
 

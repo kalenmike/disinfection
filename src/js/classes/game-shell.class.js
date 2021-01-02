@@ -57,6 +57,7 @@ export default class GameShell {
         // Set parent
         this.menu = document.createElement("div");
         this.menu.setAttribute("id", "menu");
+        this.menu.classList.add('main-menu');
         this.menu.classList.add("no-animation");
 
         // Logo
@@ -74,6 +75,10 @@ export default class GameShell {
 
         let mainmenu = [
             {
+                "text":"Settings",
+                "name":"settings"
+            },
+            {
                 "text":"Rules",
                 "name":"rules"
             },
@@ -84,7 +89,7 @@ export default class GameShell {
             {
                 "text":"Credits",
                 "name":"credits"
-            }
+            },
         ];
 
         let p = document.createElement('p');
@@ -92,7 +97,6 @@ export default class GameShell {
         p.innerText = 'Version 1.0.0';
 
         let ul = document.createElement('ul');
-        ul.classList.add('main-menu');
 
         mainmenu.forEach(menuItem =>{
             let li = document.createElement('li');
@@ -121,8 +125,8 @@ export default class GameShell {
         this.gameMount.appendChild(this.menu);
     }
 
-    openPage(name){
-        let page = new Page(name);
+    openPage(name, level = null){
+        let page = new Page(name, level);
         this.gameMount.appendChild(page);
     }
 
@@ -169,6 +173,10 @@ export default class GameShell {
                 this.cleanCount,
                 this.levelCallback.bind(this)
                 );
+            // [DEV] This solves the unpause problem but needs work
+            document.getElementById('pause-button').addEventListener('click', ()=>{
+                this.openPage('settings', this.level);
+            });
             });
         this.menu.appendChild(startBtn);
 
@@ -370,9 +378,9 @@ export default class GameShell {
         cleanCount.innerHTML = cleanCountInner;
         this.virusBox.appendChild(cleanCount);
 
-        let pauseButton = this.createElementWithId("button", "pause-button");
-        pauseButton.innerText = 'PAUSE'
-        this.virusBox.appendChild(pauseButton);
+        let settingsBtn = this.createElementWithId("img", "pause-button");
+        settingsBtn.src = './assets/img/icons/settings.svg';
+        this.virusBox.appendChild(settingsBtn);
     }
 
     createElementWithId(elementType, id) {

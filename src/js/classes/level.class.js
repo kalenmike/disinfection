@@ -53,12 +53,14 @@ export default class Level {
     pauseGame(){
         if (this.pause){
             this.pause = false;
+            this.backgroundAudio.play();
             this.spawnViruses();
             this.viruses.forEach((virus) => {
                 virus.unfreeze();
             });
         }else{
             this.pause = true;
+            this.backgroundAudio.pause();
             this.viruses.forEach((virus) => {
                 virus.freeze();
             });
@@ -130,6 +132,12 @@ export default class Level {
     }
 
     virusDeath() {
+        // Prevent score from increasing if cheating
+        if(this.pause){
+            this.spawned--; // Decrease the spawned count to make up for the cheat
+            console.log('[Cheat] Player bypassed the pause menu');
+            return;
+        }  
         this.living--;
         this.adjustVirusPPM(this.living / this.maxAlive * 100);
         this.updateCleanCount();
