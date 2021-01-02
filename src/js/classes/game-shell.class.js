@@ -1,6 +1,9 @@
 import Page from "./page.class.js";
 import Level from "./level.class.js";
 
+// For Demo
+import Virus from "./virus.class.js";
+
 export default class GameShell {
     levelData; // Holds the level data as js object
     level; // Holds the level object created via the Level class
@@ -132,7 +135,31 @@ export default class GameShell {
         });
         ul.appendChild(li);
 
+        // Create 10 demo viruses
+        // for(let i = 0; i < 10; i++){
+        //     this.spawnDemoVirus();
+        // }
+        
+
         this.gameMount.appendChild(this.menu);
+    }
+
+    spawnDemoVirus(){
+        let demoData = {
+            name: "agualess",
+            strength: 1,
+            size: { min: 20, max: 30 },
+            speed: { min: 20, max: 20 },
+            imagePath: "./assets/img/viruses/virus-1.svg",
+            class: "agualess",
+        };
+
+        let virus = new Virus(demoData, this.demoVirusDeath.bind(this));
+        this.menu.appendChild(virus);
+    }
+
+    demoVirusDeath(){
+        this.spawnDemoVirus();
     }
 
     openPage(name, level = null) {
@@ -142,17 +169,17 @@ export default class GameShell {
 
     updatePlayerLivesGUI() {
         if (this.playerLives == 1) {
-            document.getElementById("life-one").classList.remove('lost');
-            document.getElementById("life-two").classList.add('lost');
-            document.getElementById("life-three").classList.add('lost');
+            document.getElementById("life-one").classList.remove("lost");
+            document.getElementById("life-two").classList.add("lost");
+            document.getElementById("life-three").classList.add("lost");
         } else if (this.playerLives == 2) {
-            document.getElementById("life-one").classList.remove('lost');
-            document.getElementById("life-two").classList.remove('lost');
-            document.getElementById("life-three").classList.add('lost');
+            document.getElementById("life-one").classList.remove("lost");
+            document.getElementById("life-two").classList.remove("lost");
+            document.getElementById("life-three").classList.add("lost");
         } else if (this.playerLives == 3) {
-            document.getElementById("life-one").classList.remove('lost');
-            document.getElementById("life-two").classList.remove('lost');
-            document.getElementById("life-three").classList.remove('lost');
+            document.getElementById("life-one").classList.remove("lost");
+            document.getElementById("life-two").classList.remove("lost");
+            document.getElementById("life-three").classList.remove("lost");
         }
     }
 
@@ -181,11 +208,12 @@ export default class GameShell {
         levelInstructions.innerText = this.levelData.text;
         this.menu.appendChild(levelInstructions);
 
+        // [DEV] THinking to remove this
         // Level Data
-        let levelDifficulty = document.createElement("div");
-        levelDifficulty.innerText = "Difficulty : " + this.levelData.difficulty;
-        levelDifficulty.setAttribute("id", "difficulty");
-        this.menu.appendChild(levelDifficulty);
+        // let levelDifficulty = document.createElement("div");
+        // levelDifficulty.innerText = "Difficulty : " + this.levelData.difficulty;
+        // levelDifficulty.setAttribute("id", "difficulty");
+        // this.menu.appendChild(levelDifficulty);
 
         // Start Button
         let startBtn = document.createElement("button");

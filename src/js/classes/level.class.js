@@ -104,6 +104,7 @@ export default class Level {
                 this.virusTypes[random],
                 this.virusDeath.bind(this)
             );
+            // document.getElementById('virus-box').appendChild(virus);
             this.spawned++;
             this.living++;
             this.adjustVirusPPM(this.living / this.maxAlive * 100);
@@ -134,7 +135,6 @@ export default class Level {
     }
 
     virusDeath() {
-        console.log('Virus Death Received In Level');
         // Prevent score from increasing if cheating
         if(this.pause){
             this.spawned--; // Decrease the spawned count to make up for the cheat

@@ -19,6 +19,7 @@
         };
 
         this.live();
+        // return this.virusElem; // For appending to DOM
     }
 
     live(){
@@ -135,9 +136,11 @@
 
     showEntryArrow(id){
         let elm = document.getElementById(id);
-        let clone = elm.cloneNode(true);
-        elm.parentNode.replaceChild(clone, elm);
-        clone.classList.add('play');
+        if (elm){ // Fix for when no arrows are in DOM
+            let clone = elm.cloneNode(true);
+            elm.parentNode.replaceChild(clone, elm);
+            clone.classList.add('play');
+        }
     }
 
     addToDOM(launchPosition){
@@ -178,7 +181,6 @@
             this.showEntryArrow('from-left');
         }
 
-        document.getElementById('virus-box').appendChild(virus);
         virus.addEventListener('click', this.die.bind(this));
 
         // [DEV] CHEATS
@@ -196,6 +198,7 @@
         }, false);
 
         this.virusElem = virus;
+        document.getElementById('virus-box').appendChild(virus);
     }
 
  }
