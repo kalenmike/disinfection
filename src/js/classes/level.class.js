@@ -83,7 +83,14 @@ export default class Level {
                 return;
             }
             this.currentTime -= 1000;
-            progressBar.style.width = (this.currentTime * this.decrementPercent) + "%";
+            let newPercent = this.currentTime * this.decrementPercent
+            progressBar.style.width = (newPercent) + "%";
+            // Change Color
+            if(newPercent <= 10){
+                progressBar.style.backgroundColor = "#fd6263";
+            }else if (newPercent <= 25){
+                progressBar.style.backgroundColor = "#fab000";
+            }
         },1000);// Run every second
     }
 
