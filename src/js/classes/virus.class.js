@@ -184,7 +184,7 @@
         virus.addEventListener('click', this.die.bind(this));
 
         // [DEV] CHEATS
-        virus.addEventListener('mouseover', this.die.bind(this));
+        // virus.addEventListener('mouseover', this.die.bind(this));
 
         // Hide Ghost image
         document.addEventListener("dragstart", function( event ) {
