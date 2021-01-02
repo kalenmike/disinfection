@@ -3,14 +3,17 @@ export default class Page{
     constructor(name, level = null){
         this.container = document.createElement('div');
         this.container.classList.add('page-overlay');
-        
+
+        let innerContent = document.createElement('div');
+        innerContent.classList.add('inner-content');
 
         // Close Button
         let close = document.createElement('div');
         close.classList.add('close-overlay');
         close.innerText = "✕";
         close.addEventListener('click', (e) =>{
-            e.target.parentNode.parentNode.removeChild(close.parentNode);
+            // e.target.parentNode.parentNode.removeChild(close.parentNode);
+            this.container.parentNode.removeChild(this.container);
         });
 
         if (level){
@@ -20,7 +23,7 @@ export default class Page{
             });
         }
 
-        this.container.appendChild(close);
+        innerContent.appendChild(close);
 
         let pageData;
         if (name == "rules"){
@@ -33,7 +36,8 @@ export default class Page{
             pageData = this.buildSettings();
         }
 
-        this.container.appendChild(pageData);
+        innerContent.appendChild(pageData);
+        this.container.appendChild(innerContent);
         return this.container;
     }
 
