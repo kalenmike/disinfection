@@ -43,9 +43,9 @@
 
 #virus-box{
     height:100%;
+    transition: 5s;
 
     &.dangerous{
-        transition: 500ms;
         background:radial-gradient(rgba($primaryColor, 0.3), rgba(#99bb01,0.7), transparent);
     }
 }
@@ -261,13 +261,17 @@
     }
 }
 
-#test-tube {
-    height: 150px;
-    width: auto;
+#health{
     position: absolute;
-    bottom: 2em;
+    bottom: 1em;
     right: 1em;
+
+    #test-tube {
+        height: 150px;
+        width: auto;
+    }
 }
+
 #tube-one,
 #tube-two,
 #tube-three,
