@@ -23,5 +23,5 @@
     "virusCount" : 85,
     "spawnTime" : {"min":400, "max":600},
     "timeLimit" : 62000,
-    "imagePath": "./assets/img/backgrounds/street-desktop.png"
+    "imagePath": "img/backgrounds/street-desktop.png"
 }

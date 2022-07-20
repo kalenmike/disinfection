@@ -32,7 +32,7 @@ export default class Level {
         this.maxAlive = 10;
 
         if (window.gameSettings.audio.enabled && window.gameSettings.audio.background){
-            this.backgroundAudio = new Audio('./assets/sounds/POL-foggy-forest-short.wav');
+            this.backgroundAudio = new Audio('sounds/POL-foggy-forest-short.wav');
             this.backgroundAudio.volume = window.gameSettings.audio.volume;
             this.backgroundAudio.loop = true;
             this.backgroundAudio.play();
@@ -214,7 +214,7 @@ export default class Level {
      */
     async loadVirusData(virus) {
         const response = await fetch(
-            "./assets/json/viruses/virus-" + virus.id + ".json"
+            "json/viruses/virus-" + virus.id + ".json"
         );
         const virusData = response.json();
         return virusData;

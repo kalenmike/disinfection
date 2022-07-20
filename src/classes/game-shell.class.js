@@ -144,7 +144,7 @@ export default class GameShell {
         // }
 
         let kmLogo = document.createElement('img');
-        kmLogo.src = './assets/img/kalen-michael-logo.svg'
+        kmLogo.src = 'img/kalen-michael-logo.svg'
         kmLogo.style.width = "100px";
         this.menu.appendChild(kmLogo);
         
@@ -160,7 +160,7 @@ export default class GameShell {
             strength: 1,
             size: { min: 20, max: 30 },
             speed: { min: 20, max: 20 },
-            imagePath: "./assets/img/viruses/virus-1.svg",
+            imagePath: "img/viruses/virus-1.svg",
             class: "agualess",
         };
 
@@ -448,16 +448,16 @@ export default class GameShell {
         this.virusBox.appendChild(cleanCount);
 
         let settingsBtn = this.createElementWithId("img", "pause-button");
-        settingsBtn.src = "./assets/img/icons/settings.svg";
+        settingsBtn.src = "img/icons/settings.svg";
         this.virusBox.appendChild(settingsBtn);
 
         let lives = this.createElementWithId("div", "player-lives");
         let lifeOne = this.createElementWithId("img", "life-one");
-        lifeOne.src = "./assets/img/icons/heart.svg";
+        lifeOne.src = "img/icons/heart.svg";
         let lifeTwo = this.createElementWithId("img", "life-two");
-        lifeTwo.src = "./assets/img/icons/heart.svg";
+        lifeTwo.src = "img/icons/heart.svg";
         let lifeThree = this.createElementWithId("img", "life-three");
-        lifeThree.src = "./assets/img/icons/heart.svg";
+        lifeThree.src = "img/icons/heart.svg";
         lives.appendChild(lifeOne);
         lives.appendChild(lifeTwo);
         lives.appendChild(lifeThree);
@@ -477,7 +477,7 @@ export default class GameShell {
 
     async loadLevelData() {
         const response = await fetch(
-            "./assets/json/levels/level-" + this.levelNum + ".json"
+            "json/levels/level-" + this.levelNum + ".json"
         );
         if (response.status != 404) {
             const levelData = response.json();

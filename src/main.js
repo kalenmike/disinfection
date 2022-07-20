@@ -20,7 +20,7 @@ window.gameSettings = {
 }
 
 if (window.gameSettings.audio.enabled && window.gameSettings.audio.background){
-    window.menuMusic = new Audio('./assets/sounds/POL-doggo-brothers-short.wav');
+    window.menuMusic = new Audio('/sounds/POL-doggo-brothers-short.wav');
     window.menuMusic.volume = window.gameSettings.audio.volume;
     window.menuMusic.loop = true;
 };

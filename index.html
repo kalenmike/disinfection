@@ -12,23 +12,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Disinfection - Save Your House Today</title>
 
-        <link
+        <!-- <link
             rel="canonical"
             href="https://www.kalenmichael.com/disinfection"
-        />
+        /> -->
 
         <!-- PWA -->
         <meta name="theme-color" content="#0e4387" />
         <link rel="manifest" href="./manifest.json" />
-        <script>
+        <!-- <script>
             /* Check browser support */
             if ("serviceWorker" in navigator) {
                 navigator.serviceWorker.register("./sw.js", { scope: "./" });
             }
-        </script>
+        </script> -->
 
         <!-- Social Meta's -->
-        <meta name="description" content="Save Your House Today" />
+        <!-- <meta name="description" content="Save Your House Today" />
         <meta name="robots" content="index, follow" />
         <meta
             name="googlebot"
@@ -60,16 +60,14 @@
             property="og:image"
             content="https://www.kalenmichael.com/disinfection/assets/img/social-image.jpg"
         />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary_large_image" /> -->
 
         <!-- Favicons -->
-        <link
+        <!-- <link
             rel="icon"
             href="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon.png"
             type="image/png"
         />
-
-        <!-- Favicons -->
         <link
             rel="icon"
             href="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon-32x32.png"
@@ -92,7 +90,7 @@
             rel="shortcut icon"
             sizes="196x196"
             href="https://www.kalenmichael.com/disinfection/assets/img/favicons/favicon-196x196.png"
-        />
+        /> -->
 
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -107,10 +105,11 @@
         />
 
         <!-- Base CSS -->
-        <link rel="stylesheet" href="assets/css/style.css" />
+        <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css" /> -->
+        <link rel="stylesheet" type="text/css" href="src/sass/style.scss" />
 
         <!-- Google Analytics -->
-        <script
+        <!-- <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-16905202-5"
         ></script>
@@ -122,12 +121,12 @@
             gtag("js", new Date());
 
             gtag("config", "UA-16905202-5");
-        </script>
+        </script> -->
     </head>
     <body>
         <div id="disinfection"></div>
 
         <!-- Compiled JS -->
-        <script src="dist/main.js"></script>
+        <script type="module" src="src/main.js"></script>
     </body>
 </html>

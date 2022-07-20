@@ -14,7 +14,7 @@
         this.size = this.randomNumberBetween(this.template.size.min, this.template.size.max);
 
         if (window.gameSettings.audio.enabled && window.gameSettings.audio.sounds){
-            this.squishAudio = new Audio('assets/sounds/squish.wav');
+            this.squishAudio = new Audio('/sounds/squish.wav');
             this.squishAudio.volume = 0.1;
         };
 
@@ -36,7 +36,7 @@
         }
         this.isAlive = false;
         this.playSound();
-        this.virusElem.src = "./assets/img/art/pop.png"
+        this.virusElem.src = "img/art/pop.png"
         this.virusElem.classList.add('clicked');
         setTimeout(() =>{
             this.virusElem.parentNode.removeChild(this.virusElem);
